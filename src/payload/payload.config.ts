@@ -18,7 +18,15 @@ import {
   UnorderedListFeature,
   UploadFeature,
 } from '@payloadcms/richtext-lexical'
-//import { slateEditor } from '@payloadcms/richtext-slate'
+
+import siteImage from './collections/Media/SiteImage/SiteImage'
+import profileImage from './collections/Media/ProfileImage/ProfileImage'
+import Users from './collections/Users'
+import Blog from './collections/Blog/Blog'
+import blogImage from './collections/Media/BlogImage/BlogImage'
+import Projects from './collections/Projects/Projects'
+import projectImage from './collections/Media/ProjectImage/ProjectImage'
+
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { buildConfig } from 'payload/config'
 import sharp from 'sharp'
@@ -30,34 +38,7 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   //editor: slateEditor({}),
   editor: lexicalEditor(),
-  collections: [
-    {
-      slug: 'pages',
-      admin: {
-        useAsTitle: 'title',
-      },
-      fields: [
-        {
-          name: 'title',
-          type: 'text',
-        },
-        {
-          name: 'content',
-          type: 'richText',
-        },
-      ],
-    },
-    {
-      slug: 'media',
-      upload: true,
-      fields: [
-        {
-          name: 'text',
-          type: 'text',
-        },
-      ],
-    },
-  ],
+  collections: [blogImage, projectImage, profileImage, siteImage, Users, Blog, Projects],
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
@@ -71,27 +52,10 @@ export default buildConfig({
     url: process.env.MONGODB_URI || '',
   }),
   admin: {
-    autoLogin: {
-      email: 'dev@payloadcms.com',
-      password: 'test',
-      prefillOnly: true,
-    },
+    //
   },
   async onInit(payload) {
-    const existingUsers = await payload.find({
-      collection: 'users',
-      limit: 1,
-    })
-
-    if (existingUsers.docs.length === 0) {
-      await payload.create({
-        collection: 'users',
-        data: {
-          email: 'dev@payloadcms.com',
-          password: 'test',
-        },
-      })
-    }
+    //
   },
   // Sharp is now an optional dependency -
   // if you want to resize images, crop, set focal point, etc.
