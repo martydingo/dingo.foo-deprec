@@ -9,7 +9,7 @@ export const CodeBlockHTMLConverter: any = {
     //   langs: [],
     // })
     const html = codeToHtml(fields.data.codeContent, {
-      lang: fields.data.codeLanguage,
+      lang: fields.codeLanguage,
       theme: 'solarized-dark',
     })
     return html
