@@ -1,5 +1,4 @@
 import MermaidClient from "./mermaidClient"
-import { createMermaidRenderer } from 'mermaid-isomorphic'
 
 
 export default async function MermaidTest() {
@@ -130,15 +129,11 @@ end
 172.16.6.1 <-.-> 172.16.6.2
 `
 
-const renderer = createMermaidRenderer()
 
-const results = await renderer([mermaidCode])
-console.log(results)
 
   return (
     <div className="container mx-auto">
-      {/* <MermaidClient mermaidCode={mermaidCode} /> */}
-	  <div dangerouslySetInnerHTML={{"__html": results}} />
+      <MermaidClient mermaidCode={mermaidCode} />
     </div>
   )
 }
