@@ -1,3 +1,6 @@
+import path from 'path'
+import fs from 'fs'
+
 export const MermaidDiagramBlockHTMLConverter = {
   converter: async ({ fields }) => {
     const mermaidUUID = `${fields.id}-${fields.blockName
@@ -9,11 +12,17 @@ export const MermaidDiagramBlockHTMLConverter = {
     const mermaidDiagram = await fetch(mermaidFetchFQDN).then((response) => {
       return response.text()
     })
-    console.log(mermaidDiagram)
+
+    const imagesDir = path.resolve(process.cwd(), './public/images/blog/mermaid')
+    fs.writeFileSync(
+      `${imagesDir}/mermaid-${mermaidUUID}.svg`,
+      mermaidDiagram.replaceAll('mermaid-svg', `mermaid-svg-${mermaidUUID}`),
+    )
+
     return `<div class="mermaid-container" id="mermaid-container-${mermaidUUID}">
-                    <pre id="mermaid-${mermaidUUID}" class="mermaid">
-                    ${mermaidDiagram}
-                    </pre>
+        <object data="/images/blog/mermaid/mermaid-${mermaidUUID}.svg" type="image/svg+xml">
+        <img src="/images/blog/mermaid/mermaid-${mermaidUUID}.svg" alt="Mermaid diagram" />
+        </object>
                 </div>`
   },
   nodeTypes: ['block'],
