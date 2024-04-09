@@ -16,7 +16,9 @@ export const MermaidDiagramBlockHTMLConverter = {
     const imagesDir = path.resolve(process.cwd(), './public/images/blog/mermaid')
     fs.writeFileSync(
       `${imagesDir}/mermaid-${mermaidUUID}.svg`,
-      mermaidDiagram.replaceAll('mermaid-svg', `mermaid-svg-${mermaidUUID}`),
+      mermaidDiagram
+        .replaceAll('mermaid-svg', `mermaid-svg-${mermaidUUID}`)
+        .replace('width="100%"', 'class="mermaid-svg" width="100%"'),
     )
 
     return `<div class="mermaid-container" id="mermaid-container-${mermaidUUID}">

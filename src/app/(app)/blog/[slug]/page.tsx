@@ -4,6 +4,7 @@ import payloadConfig from "@payload-config";
 import BreadCrumb from "@/components/ui/navigation/BreadCrumb/BreadCrumb";
 import HeadingSelect from "@/components/ui/navigation/HeadingSelect/HeadingSelect";
 import { BlogPostClient } from "@/components/ui/blog/BlogPostClient";
+import MermaidClient from "./MermaidClient";
 
 function slugify(text: string) {
     return text
@@ -54,7 +55,6 @@ export default async function BlogPost({ params }: { params: { slug: string } })
                 <BlogPostClient page={BlogPost.docs[0]} />
             </div>
             <div className="basis-1/3">
-
             </div>
         </div>
     )

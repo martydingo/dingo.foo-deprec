@@ -2,6 +2,7 @@
 import { useLivePreview } from '@payloadcms/live-preview-react';
 import { Blog as PageType, User } from '@payload-types'
 import React from 'react';
+import { loadSVG } from '@/components/lib/svgUtils';
 
 
 export const BlogPostClient: React.FC<{
@@ -20,9 +21,14 @@ export const BlogPostClient: React.FC<{
         depth: 2,
     })
     React.useEffect(() =>{
-        
-        console.log(data)
+        const style = document.createElementNS('http://www.w3.org/2000/svg', 'style')
+        const mermaidFilepath = `./public/${document.getElementsByClassName('mermaid-container')[0].getElementsByTagName('object')[0].getAttribute('data')}`
+        const svg = loadSVG(mermaidFilepath!)
     })
+    const mermaidCss = 
+    `.mermaid-svg {
+        background: red;
+    }`
     return (
         <div className='mt-6'>
             <h1>{data.title}</h1>

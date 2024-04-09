@@ -38,13 +38,17 @@
     --border: 12 6.5% 15.1%;
     --radius: 0.5rem;
 
-    svg[id^='mermaid-svg'] {
-      background: var(--background);
-      height: 100vh;
-    }
   }
 
+  // svg[id^='mermaid-svg'] {
+  //   background: black;
+  // }
+
   .dark {
+    .mermaid-svg {
+      background: red;
+    }
+
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;
 
