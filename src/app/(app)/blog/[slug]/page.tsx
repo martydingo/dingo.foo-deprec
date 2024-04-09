@@ -1,6 +1,6 @@
-import "@/styles/css/globals.css";
-import { getPayloadClient } from "@/payload/payloadClient";
-import Mermaid from "@/components/ui/blog/Mermaid";
+import { getPayload } from "payload";
+import payloadConfig from "@payload-config";
+// import Mermaid from "@/components/ui/blog/Mermaid";
 import BreadCrumb from "@/components/ui/navigation/BreadCrumb/BreadCrumb";
 import HeadingSelect from "@/components/ui/navigation/HeadingSelect/HeadingSelect";
 import { BlogPostClient } from "@/components/ui/blog/BlogPostClient";
@@ -17,7 +17,9 @@ function slugify(text: string) {
 }
 
 export default async function BlogPost({ params }: { params: { slug: string } }) {
-    const payload = await getPayloadClient();
+    const payload = await getPayload({
+        config: payloadConfig
+    });
     const allBlogPosts = await payload.find({
         collection: "blog"
     })

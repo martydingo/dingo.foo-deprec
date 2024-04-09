@@ -30,7 +30,7 @@ export function BlogListCarousel({ pages }) {
                         <Link href={`/blog/${page.slug}`}>
                             <div className="p-1">
                                 <Card>
-                                    {page.previewImage && <div className="absolute w-full h-full z-10 -ml-2 rounded">
+                                    {page.previewImage && <div className="fixed w-full h-full z-10 -ml-2 rounded">
                                         <Image fill className="object-cover brightness-90" alt={page.previewImage.alt} src={page.previewImage.sizes.square_small.url} />
                                     </div>}
                                     <CardContent className="flex aspect-square items-center p-6 rounded">

@@ -1,10 +1,10 @@
 'use client'
 import { useLivePreview } from '@payloadcms/live-preview-react';
-import { Blog as PageType, User } from '@payload-types'
+import { Project as PageType, User } from '@payload-types'
 import React from 'react';
 
 
-export const BlogPostClient: React.FC<{
+export const ProjectClient: React.FC<{
     page: {
         title: string
         id: string
@@ -16,17 +16,19 @@ export const BlogPostClient: React.FC<{
 }> = ({ page: initialPage }) => {
     const { data } = useLivePreview<PageType>({
         initialData: initialPage,
-        serverURL: "http://172.28.4.29:3000/",
-        depth: 2,
+        serverURL: "http://10.2.3.130:3000/",
+        depth: 1,
     })
     React.useEffect(() =>{
         
         console.log(data)
     })
     return (
-        <div className='mt-6'>
+        <div className='mt-6 prose dark:prose-invert xl:max-w-5xl xl:prose-xl'>
             <h1>{data.title}</h1>
-            <div dangerouslySetInnerHTML={{ '__html': data.content_html as string }} />
+            <div>
+                <div dangerouslySetInnerHTML={{ '__html': data.content_html as string }} />
+            </div>
         </div>
 
     )

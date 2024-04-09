@@ -6,10 +6,5 @@ export default function ProjectLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return (
-        <div>
-            <NavigationBar curPage="Project" />
-            {children}
-        </div>
-    )
+    return children
 }

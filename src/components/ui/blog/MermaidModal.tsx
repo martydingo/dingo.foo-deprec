@@ -11,7 +11,7 @@ import {
 
 import mermaid from "mermaid"
 import React from "react"
-import saveMermaidSVG from "@/components/lib/mermaid/saveMermaidSVG"
+// import saveMermaidSVG from "@/components/lib/mermaid/saveMermaidSVG"
 import Image from "next/image"
 import { Button } from "@/components/lib/shadcn-ui/button"
 import { ZoomInIcon } from "@radix-ui/react-icons"
@@ -63,7 +63,7 @@ export default function MermaidModal({ mermaidId }: { mermaidId: string }) {
             const { svg, bindFunctions } = await mermaid.render("mermaid", mermaidCode)
             bindFunctions!(mermaidElement!)
             // console.log(svg)
-            saveMermaidSVG(svg, mermaidId)
+            // saveMermaidSVG(svg, mermaidId)
             const div = document.createElement('div')
             div.innerHTML = svg
             mermaidElement!.replaceWith(div)
