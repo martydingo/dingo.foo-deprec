@@ -11,7 +11,7 @@ export const MermaidDiagramBlockHTMLConverter = {
     })
     console.log(mermaidDiagram)
     return `<div class="mermaid-container" id="mermaid-container-${mermaidUUID}">
-                    <pre id="mermaid-${mermaidUUID}" class="mermaid" mermaidCode="${fields.mermaidDiagramCode}">
+                    <pre id="mermaid-${mermaidUUID}" class="mermaid">
                     ${mermaidDiagram}
                     </pre>
                 </div>`

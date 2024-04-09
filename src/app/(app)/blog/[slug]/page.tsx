@@ -56,7 +56,6 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             <div className="basis-1/3">
 
             </div>
-            <Mermaid />
         </div>
     )
 }
