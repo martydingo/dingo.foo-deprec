@@ -143,6 +143,9 @@ dependencies:
   mermaid:
     specifier: ^10.9.0
     version: 10.9.0
+  mermaid-isomorphic:
+    specifier: ^2.1.2
+    version: 2.1.2
   next:
     specifier: 14.2.0-canary.23
     version: 14.2.0-canary.23(@babel/core@7.24.4)(react-dom@18.2.0)(react@18.2.0)
@@ -152,6 +155,9 @@ dependencies:
   payload:
     specifier: 3.0.0-alpha.55
     version: 3.0.0-alpha.55(@swc/core@1.4.12)(@swc/types@0.1.6)
+  playwright-core:
+    specifier: ^1.43.0
+    version: 1.43.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1782,6 +1788,12 @@ packages:
 
   /@floating-ui/utils@0.2.1:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
+    dev: false
+
+  /@fortawesome/fontawesome-free@6.5.2:
+    resolution: {integrity: sha512-hRILoInAx8GNT5IMkrtIt9blOdrqHOnPBH+k70aWUAqPZPgopb9G5EQJFpaBx/S8zp2fC+mPW349Bziuk1o28Q==}
+    engines: {node: '>=6'}
+    requiresBuild: true
     dev: false
 
   /@hapi/hoek@9.3.0:
@@ -8040,6 +8052,16 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
+  /mermaid-isomorphic@2.1.2:
+    resolution: {integrity: sha512-56bgo4pexO4dxtGT0szLKkbHtPdgB2ZDhIZBV6tKT8J/NlyjLa2bTeT9t5Y2zeMgL0y68gCYCQvn9+tIFg6Cpw==}
+    dependencies:
+      '@fortawesome/fontawesome-free': 6.5.2
+      mermaid: 10.9.0
+      playwright-core: 1.43.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /mermaid@10.9.0:
     resolution: {integrity: sha512-swZju0hFox/B/qoLKK0rOxxgh8Cf7rJSfAUc1u8fezVihYMvrJAS45GzAxTVf4Q+xn9uMgitBcmWk7nWGXOs/g==}
     dependencies:
@@ -8986,6 +9008,12 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 3.0.0
+    dev: false
+
+  /playwright-core@1.43.0:
+    resolution: {integrity: sha512-iWFjyBUH97+pUFiyTqSLd8cDMMOS0r2ZYz2qEsPjH8/bX++sbIJT35MSwKnp1r/OQBAqC5XO99xFbJ9XClhf4w==}
+    engines: {node: '>=16'}
+    hasBin: true
     dev: false
 
   /pluralize@8.0.0:
