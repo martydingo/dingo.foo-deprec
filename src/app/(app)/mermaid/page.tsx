@@ -7,7 +7,7 @@ export default async function MermaidTest() {
 	init: {
 		"theme": "dark",
 		"flowchart": {
-			"defaultRenderer": "dagre"
+			"defaultRenderer": "elk"
 		}
 	}
 }%%
@@ -129,11 +129,15 @@ end
 172.16.6.1 <-.-> 172.16.6.2
 `
 
-
+const encodedMermaidCode = btoa(mermaidCode)
+const mermaidFetchFQDN = `https://mermaid.ink/svg/${encodedMermaidCode}`
+const mermaidDiagram = await fetch(mermaidFetchFQDN).then((response) => {return response.text()} )
+console.log(mermaidDiagram)
 
   return (
     <div className="container mx-auto">
-      <MermaidClient mermaidCode={mermaidCode} />
+      {/* <MermaidClient mermaidCode={mermaidCode} /> */}
+	  <div dangerouslySetInnerHTML={{"__html": mermaidDiagram}} />
     </div>
   )
 }
