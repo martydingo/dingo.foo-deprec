@@ -125,6 +125,9 @@ dependencies:
   date-fns:
     specifier: ^3.6.0
     version: 3.6.0
+  embla-carousel-autoplay:
+    specifier: ^8.0.1
+    version: 8.0.1(embla-carousel@8.0.1)
   embla-carousel-react:
     specifier: ^8.0.1
     version: 8.0.1(react@18.2.0)
@@ -164,9 +167,6 @@ dependencies:
   sharp:
     specifier: 0.32.6
     version: 0.32.6
-  shiki:
-    specifier: ^1.2.4
-    version: 1.2.4
   sonner:
     specifier: ^1.4.41
     version: 1.4.41(react-dom@18.2.0)(react@18.2.0)
@@ -214,6 +214,9 @@ devDependencies:
   postcss-import:
     specifier: ^16.1.0
     version: 16.1.0(postcss@8.4.38)
+  shiki:
+    specifier: ^1.2.4
+    version: 1.2.4
   tailwindcss:
     specifier: ^3.4.3
     version: 3.4.3
@@ -3856,7 +3859,7 @@ packages:
 
   /@shikijs/core@1.2.4:
     resolution: {integrity: sha512-ClaUWpt8oTzjcF0MM1P81AeWyzc1sNSJlAjMG80CbwqbFqXSNz+NpQVUC0icobt3sZn43Sn27M4pHD/Jmp3zHw==}
-    dev: false
+    dev: true
 
   /@sideway/address@4.1.5:
     resolution: {integrity: sha512-IqO/DUQHUkPeixNQ8n0JA6102hT9CmaljNTPmQ1u8MEhBo/R4Q8eKLN/vGZxuebwOroDB4cbpjheD4+/sKFK4Q==}
@@ -5805,6 +5808,14 @@ packages:
 
   /electron-to-chromium@1.4.729:
     resolution: {integrity: sha512-bx7+5Saea/qu14kmPTDHQxkp2UnziG3iajUQu3BxFvCOnpAJdDbMV4rSl+EqFDkkpNNVUFlR1kDfpL59xfy1HA==}
+
+  /embla-carousel-autoplay@8.0.1(embla-carousel@8.0.1):
+    resolution: {integrity: sha512-4zcB6jVSGTJSXL7uroccjak9U+lyyoZTO4NISwdCHNMYVbIra8aZGEz0I/4Ql753do6jqjaRE8MsCBhJbt6u6A==}
+    peerDependencies:
+      embla-carousel: 8.0.1
+    dependencies:
+      embla-carousel: 8.0.1
+    dev: false
 
   /embla-carousel-react@8.0.1(react@18.2.0):
     resolution: {integrity: sha512-cpFQ/HwCsjBjzpu9Z9IHmZ9DaCSf/wo4q+qUTcRW3SsNv+1Q8IY7Y8J2QIyTmz0vOWY7tliu3uE2gqRH7ZDwOQ==}
@@ -9140,7 +9151,7 @@ packages:
     resolution: {integrity: sha512-Q9n9jKiOjJCRPztA9POn3/uZXNySHDNKAsPNpmtHDcFyi6ZQhx5vQKZW3Nhrwn8TWW3RudSRk66zqY603EZDeg==}
     dependencies:
       '@shikijs/core': 1.2.4
-    dev: false
+    dev: true
 
   /side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
