@@ -15,7 +15,7 @@ export const mermaidThemeDirectives = {
     // noteBkgColor: "",
     // noteTextColor: "",
     // noteBorderColor: "",
-    lineColor: '#ffcc6699',
+    lineColor: '#bae67e99',
     // textColor: "",
     // mainBkg: "",
     // errorBkgColor: "",
