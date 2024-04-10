@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-import { mermaidThemeDirectives } from '@/styles/themes/mermaid/halcyon2'
+import { mermaidThemeDirectives } from '@/styles/themes/mermaid/nightfox'
 import { mermaidFlowchartDirectives } from '@/styles/themes/mermaid/generic'
 
 export const BlogMermaidDiagramBlockHTMLConverter = {

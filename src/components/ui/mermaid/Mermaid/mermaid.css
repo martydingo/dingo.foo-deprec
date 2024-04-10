@@ -1,0 +1,65 @@
+.nodeLabel {
+    color: var(--tw-prose-body) !important;
+    height: max-content !important;
+    max-height: max-content;
+}
+
+.subgraph-lvl-0 {
+    fill: #E6E4D9 !important;
+    stroke: #F2F0E5 !important;
+}
+
+.subgraph-lvl-1 {
+    fill: #E6E4D9 !important;
+    stroke: #DAD8CE !important;
+
+}
+
+.subgraph-lvl-2 {
+    fill: #CECDC3 !important;
+    stroke: #B7B5AC !important;
+}
+
+
+.label-container {
+    fill: #CECDC3 !important;
+    stroke: #B7B5AC !important;
+
+}
+
+.dark {
+    .nodeLabel {
+        color: var(--tw-prose-invert-body) !important;
+        height: max-content !important;
+        max-height: max-content;
+    }
+
+    .subgraph-lvl-0 {
+        fill: #131a24 !important;
+        stroke: #192330 !important;
+    }
+
+    .subgraph-lvl-1 {
+        fill: #192330 !important;
+        stroke: #212e3f !important;
+
+    }
+
+    .subgraph-lvl-2 {
+        fill: #212e3f !important;
+        stroke: #29394f !important;
+
+    }
+
+    .subgraph-lvl-3 {
+        fill: #29394f !important;
+        stroke: #39506d !important;
+
+    }
+
+    .label-container {
+        fill: #29394f !important;
+        stroke: var(--border) !important;
+
+    }
+}
