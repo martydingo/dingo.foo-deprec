@@ -43,7 +43,7 @@ export const ProjectMermaidDiagramBlockHTMLConverter = {
       mermaidDiagram.replaceAll('mermaid-svg', `mermaid-svg-${mermaidUUID}`),
     )
 
-    return `<div class="mermaid-container" id="mermaid-container-${mermaidUUID}">
+    return `<div class="mermaid-container" svgurl="/images/projects/mermaid/mermaid-${mermaidUUID}.svg" id="mermaid-container-${mermaidUUID}">
                 </div>`
   },
   nodeTypes: ['block'],

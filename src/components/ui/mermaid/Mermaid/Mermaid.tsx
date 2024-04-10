@@ -18,6 +18,7 @@ export default function Mermaid() {
                 const mermaidSVG = await loadSVG(`public/images/blog/mermaid/mermaid-${mermaidUUID}.svg`)
                 mermaidContainer.innerHTML = mermaidSVG
                 const dialogContainer = document.createElement('div')
+                dialogContainer.setAttribute('svgurl', `/images/blog/mermaid/mermaid-${mermaidUUID}.svg`)
                 const root = createRoot(dialogContainer)
                 root.render(<ViewMermaid mermaidSvg={mermaidSVG} />)
                 mermaidContainer.appendChild(dialogContainer)
