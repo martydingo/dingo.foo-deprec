@@ -27,6 +27,10 @@
 
 }
 
+.label foreignObject {
+    overflow: visible;
+}
+
 .dark {
     .nodeLabel {
         color: var(--tw-prose-invert-body) !important;
@@ -61,5 +65,9 @@
         fill: #29394f !important;
         stroke: var(--border) !important;
 
+    }
+
+    .label foreignObject {
+        overflow: visible !important;
     }
 }
