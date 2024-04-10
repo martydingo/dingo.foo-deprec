@@ -1,7 +1,7 @@
 export const mermaidThemeDirectives = {
   themeVariables: {
     fontFamily: 'Red Hat Mono',
-    //     // fontSize: "",
+    fontSize: '12',
     background: '#1d2433',
     primaryColor: '#212e3f',
     secondaryColor: '#192330',
