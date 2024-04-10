@@ -11,8 +11,9 @@ import {
 } from "@/shadcn-ui/dialog"
 import { Button } from "@/components/lib/shadcn-ui/button"
 import { ZoomInIcon } from "@radix-ui/react-icons"
+import "./mermaid.css"
 
-export default function ViewMermaid(){
+export default function ViewMermaid({ mermaidSvg }: { mermaidSvg: string }){
     return (
         <Dialog>
             <DialogTrigger>
@@ -21,6 +22,10 @@ export default function ViewMermaid(){
                     <p>View Diagram</p>
                 </Button>
             </DialogTrigger>
+                <DialogContent className="max-w-none max-h-fit h-[95vh] w-[95vw] prose dark:prose-invert">
+
+                <div dangerouslySetInnerHTML={{ __html: mermaidSvg }} />
+            </DialogContent>
             </Dialog>
     )
 }

@@ -17,6 +17,7 @@ export const BlogMermaidDiagramBlockHTMLConverter = {
       const mermaidDirectives = JSON.parse(
         mermaidLines.slice(1, mermaidDirectivesEndLine).join('\n').replace('init: ', ''),
       )
+      mermaidDirectives.theme = 'base'
       mermaidDirectives.themeVariables = Object.assign({}, mermaidThemeDirectives.themeVariables)
       mermaidDirectives.flowchart = Object.assign(
         mermaidFlowchartDirectives.flowchart,
