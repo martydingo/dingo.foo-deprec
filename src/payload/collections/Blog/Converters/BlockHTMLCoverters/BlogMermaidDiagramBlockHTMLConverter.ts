@@ -7,6 +7,9 @@ export const BlogMermaidDiagramBlockHTMLConverter = {
       .replace(/ /g, '_')
       .replace(/'/g, '_')
       .toLowerCase()}`
+    const mermaidDirectives = fields.mermaidCode.split('%%')
+    console.log(mermaidDirectives)
+
     const encodedMermaidCode = btoa(fields.mermaidDiagramCode)
     const mermaidFetchFQDN = `https://mermaid.ink/svg/${encodedMermaidCode}`
     const mermaidDiagram = await fetch(mermaidFetchFQDN).then((response) => {

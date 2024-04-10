@@ -21,12 +21,12 @@ export default function TagBadge({
   }
 
   return (
-    <div className="flex justify-start">
-      <div className='pr-8 flex items-center gap-1'>
+    <div className="flex xl:justify-start justify-center ml-8 xl:ml-0 mt-1 xl:mt-0">
+      <div className='xl:pr-8 flex text-end items-center gap-1'>
         <Label>Tags</Label>
         <ChevronRightIcon />
       </div>
-      <div className="flex justify-evenly gap-2">
+      <div className="flex flex-wrap justify-center xl:justify-evenly gap-2">
         {tagArray.map((tag, index) => (
           <Badge variant={'secondary'} key={`tag-${tag}-${index}`}>{tag}</Badge>
         ))}
