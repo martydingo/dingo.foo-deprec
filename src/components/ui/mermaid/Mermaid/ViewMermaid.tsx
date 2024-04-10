@@ -11,7 +11,7 @@ import {
 } from '@/shadcn-ui/dialog'
 import { Button } from '@/components/lib/shadcn-ui/button'
 import { ZoomInIcon } from '@radix-ui/react-icons'
-import './mermaid.css'
+import '@/styles/css/mermaid.css'
 
 export default function ViewMermaid({ mermaidSvg }: { mermaidSvg: string }) {
   return (

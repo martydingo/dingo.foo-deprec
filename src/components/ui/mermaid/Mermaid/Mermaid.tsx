@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client';
 
 import { loadSVG } from "@/components/lib/svgUtils"
 
-import "./mermaid.css"
+import "@/styles/css/mermaid.css"
 import ViewMermaid from "./ViewMermaid";
 
 export default function Mermaid() {

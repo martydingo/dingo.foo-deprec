@@ -33,14 +33,20 @@ export const BlogMermaidDiagramBlockHTMLConverter = {
     }
 
     const mermaidFetchFQDN = `https://mermaid.ink/svg/${encodedMermaidCode}`
-    const mermaidDiagram = await fetch(mermaidFetchFQDN).then((response) => {
+    let mermaidDiagram = await fetch(mermaidFetchFQDN).then((response) => {
       return response.text()
     })
+
+    const mermaidCss = `<style>${fs.readFileSync(
+      path.resolve(process.cwd(), './src/styles/css/mermaid-svg-export.css'),
+    )}</style>`
+
+    mermaidDiagram = mermaidDiagram.replace(/<\/svg/, `${mermaidCss}</svg`)
 
     const imagesDir = path.resolve(process.cwd(), './public/images/blog/mermaid')
     fs.writeFileSync(
       `${imagesDir}/mermaid-${mermaidUUID}.svg`,
-      mermaidDiagram.replaceAll('mermaid-svg', `mermaid-svg-${mermaidUUID}`),
+      `${mermaidDiagram.replaceAll('mermaid-svg', `mermaid-svg-${mermaidUUID}`)}`,
     )
 
     return `<div class="mermaid-container" svgurl="/images/blog/mermaid/mermaid-${mermaidUUID}.svg" id="mermaid-container-${mermaidUUID}">
