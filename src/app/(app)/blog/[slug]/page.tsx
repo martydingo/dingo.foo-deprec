@@ -4,6 +4,8 @@ import payloadConfig from "@payload-config";
 import BreadCrumb from "@/components/ui/navigation/BreadCrumb/BreadCrumb";
 import HeadingSelect from "@/components/ui/navigation/HeadingSelect/HeadingSelect";
 import { BlogPostBody } from "@/components/ui/blog/BlogPostBody";
+import BlogPostHeader from "@/components/ui/blog/BlogPostHeader";
+import { Blog } from "@payload-types";
 
 function slugify(text: string) {
     return text
@@ -23,7 +25,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
     const allBlogPosts = await payload.find({
         collection: "blog"
     })
-    const BlogPost = await payload.find({
+    const BlogPostSearch = await payload.find({
         collection: "blog",
         where: {
             slug: {
@@ -32,7 +34,9 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         },
     })
 
-    const headings = BlogPost.docs[0].content.root.children
+    const BlogPost = BlogPostSearch.docs[0]
+
+    const headings = BlogPost.content!.root.children
         .filter((childNode) => childNode.type === "heading" && childNode.tag !== "h1")
         .map((heading, index) => { return { "index": index, "title": heading.children[0].text, "href": slugify(heading.children[0].text) } })
         .sort((headingA, headingB) => headingA.index - headingB.index)
@@ -42,16 +46,14 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             <div className="items-center basis-1/3 mx-auto xl:container xl:max-w-5xl gap-4 flex flex-col xl:flex-row xl:justify-between">
                 <BreadCrumb
                     rootPage={{ "title": "Blog", "href": "/blog" }}
-                    curPage={{ "title": `${BlogPost.docs[0].title as string}`, "href": `/blog/${BlogPost.docs[0].slug as string}` }}
+                    curPage={{ "title": `${BlogPost.title as string}`, "href": `/blog/${BlogPost.slug as string}` }}
                     allPosts={allBlogPosts.docs}
                 />
                 <HeadingSelect headings={headings} />
             </div>
-            <div className="basis-1/3 prose dark:prose-invert container xl:container xl:max-w-5xl grid">
-                <div className="mx-auto flex xl:ml-0">
-          
-                </div>
-                <BlogPostBody page={BlogPost.docs[0]} />
+            <div className="basis-1/3 prose dark:prose-invert container xl:container xl:max-w-5xl mt-6">
+                <BlogPostHeader page={BlogPost} />
+                <BlogPostBody page={BlogPost} />
             </div>
             <div className="basis-1/3">
             </div>
