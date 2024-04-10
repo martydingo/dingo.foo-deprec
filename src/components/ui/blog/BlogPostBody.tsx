@@ -5,7 +5,7 @@ import React from 'react';
 import { loadSVG } from '@/components/lib/svgUtils';
 
 
-export const BlogPostClient: React.FC<{
+export const BlogPostBody: React.FC<{
     page: {
         title: string
         id: string
@@ -101,7 +101,6 @@ export const BlogPostClient: React.FC<{
 
     return (
         <div className='mt-6'>
-            <h1>{data.title}</h1>
             <div dangerouslySetInnerHTML={{ '__html': data.content_html as string }} />
         </div>
 

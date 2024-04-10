@@ -1,9 +1,8 @@
-import { FeatureProvider, UploadNode } from '@payloadcms/richtext-lexical'
+import { HTMLConverterFeatureProps } from '@payloadcms/richtext-lexical'
 import { BlockHTMLMuxer } from '../Converters/BlockHTMLMuxer'
-import { CodeBlockHTMLConverter } from '../Converters/BlockHTMLCoverters/CodeBlockHTMLConverter'
 import { TextNode } from 'lexical'
 
-export const BlockHTMLMuxFeature = (props?): FeatureProvider => {
+export const BlockHTMLMuxFeature = (props?: HTMLConverterFeatureProps) => {
   return {
     feature: () => {
       return {

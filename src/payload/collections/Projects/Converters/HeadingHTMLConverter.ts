@@ -1,7 +1,7 @@
 import type { HTMLConverter } from '@payloadcms/richtext-lexical'
 import type { SerializedTextNode } from 'lexical'
 import { CodeBlockHTMLConverter } from './BlockHTMLCoverters/CodeBlockHTMLConverter'
-import { MermaidDiagramBlockHTMLConverter } from './BlockHTMLCoverters/MermaidDiagramBlockHTMLConverter'
+import {} from './BlockHTMLCoverters/ProjectMermaidDiagramBlockHTMLConverter'
 
 function slugify(text: string) {
   return text

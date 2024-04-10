@@ -8,6 +8,7 @@ import { Content } from './Fields/Content'
 import { Slug } from './Fields/Slug'
 import { Date } from './Fields/Date'
 import exp from 'constants'
+import { Tags } from './Fields/Tags'
 
 const Projects: CollectionConfig = {
   slug: 'projects',
@@ -31,6 +32,7 @@ const Projects: CollectionConfig = {
     Date,
     Author,
     PreviewImage,
+    Tags,
     Summary,
     lexicalHTML('summary', { name: 'summary_html' }),
     Content,

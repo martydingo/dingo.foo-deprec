@@ -3,8 +3,7 @@ import payloadConfig from "@payload-config";
 // import Mermaid from "@/components/ui/blog/Mermaid";
 import BreadCrumb from "@/components/ui/navigation/BreadCrumb/BreadCrumb";
 import HeadingSelect from "@/components/ui/navigation/HeadingSelect/HeadingSelect";
-import { BlogPostClient } from "@/components/ui/blog/BlogPostClient";
-import MermaidClient from "./MermaidClient";
+import { BlogPostBody } from "@/components/ui/blog/BlogPostBody";
 
 function slugify(text: string) {
     return text
@@ -52,7 +51,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
                 <div className="mx-auto flex xl:ml-0">
           
                 </div>
-                <BlogPostClient page={BlogPost.docs[0]} />
+                <BlogPostBody page={BlogPost.docs[0]} />
             </div>
             <div className="basis-1/3">
             </div>

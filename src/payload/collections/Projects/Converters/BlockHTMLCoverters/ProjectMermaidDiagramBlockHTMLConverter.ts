@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 
-export const MermaidDiagramBlockHTMLConverter = {
+export const ProjectMermaidDiagramBlockHTMLConverter = {
   converter: async ({ fields }) => {
     const mermaidUUID = `${fields.id}-${fields.blockName
       .replace(/ /g, '_')
@@ -13,11 +13,10 @@ export const MermaidDiagramBlockHTMLConverter = {
       return response.text()
     })
 
-    const imagesDir = path.resolve(process.cwd(), './public/images/blog/mermaid')
+    const imagesDir = path.resolve(process.cwd(), './public/images/projects/mermaid')
     fs.writeFileSync(
       `${imagesDir}/mermaid-${mermaidUUID}.svg`,
-      mermaidDiagram
-        .replaceAll('mermaid-svg', `mermaid-svg-${mermaidUUID}`)
+      mermaidDiagram.replaceAll('mermaid-svg', `mermaid-svg-${mermaidUUID}`),
     )
 
     return `<div class="mermaid-container" id="mermaid-container-${mermaidUUID}">
