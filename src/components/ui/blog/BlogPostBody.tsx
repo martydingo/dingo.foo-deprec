@@ -4,6 +4,7 @@ import { Blog as PageType, User } from '@payload-types'
 import React from 'react';
 import { loadSVG } from '@/components/lib/svgUtils';
 import Mermaid from '../mermaid/Mermaid/Mermaid';
+import TableWrapper from '../TableWrapper';
 
 
 export const BlogPostBody: React.FC<{
@@ -27,6 +28,7 @@ export const BlogPostBody: React.FC<{
         <div className='mt-6'>
             <div dangerouslySetInnerHTML={{ '__html': data.content_html as string }} />
             <Mermaid />
+            <TableWrapper />
         </div>
 
     )

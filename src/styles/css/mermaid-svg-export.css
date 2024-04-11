@@ -1,7 +1,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 
 svg {
-    background: var(--mermaid-bg, black) !important;
+    background: var(--mermaid-bg, #020817) !important;
 }
 
 .nodeLabel {

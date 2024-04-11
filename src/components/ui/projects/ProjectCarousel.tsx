@@ -23,7 +23,7 @@ export default function ProjectCarousel({ projects }) {
           <CarouselItem className="" key={index}>
             <Link href={`/blog/${project.slug}`}>
               <div className="p-1">
-                <Card>
+                <Card className='rounded'>
                   {project.previewImage && (
                     <div className="absolute w-full h-full z-10 -ml-2 rounded">
                       <Image
@@ -37,7 +37,7 @@ export default function ProjectCarousel({ projects }) {
                   <CardContent className="flex aspect-square items-center p-6 rounded">
                     <div
                       className={
-                        'flex flex-col self-end justify-start backdrop-brightness-50 backdrop-blur-sm z-10 py-1 px-2 rounded-xl gap-y-2'
+                        'flex flex-col self-end justify-start bg-slate-800/50 backdrop-brightness-50 backdrop-blur-sm z-10 py-1 px-2 rounded-xl gap-y-2'
                       }
                     >
                       <span className="z-10 text-white lg:text-xl font-thin lg:font-light">
