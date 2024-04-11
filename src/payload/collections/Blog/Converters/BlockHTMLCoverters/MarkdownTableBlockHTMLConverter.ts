@@ -2,7 +2,6 @@ import showdown from 'showdown'
 
 export const MarkdownTableBlockHTMLConverter: any = {
   converter: async ({ fields }) => {
-    console.log(fields)
     const tableUUID = `${fields.id}-${fields.blockName
       .replace(/ /g, '_')
       .replace(/'/g, '_')

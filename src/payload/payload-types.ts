@@ -441,6 +441,16 @@ export interface MermaidDiagramBlock {
   blockName?: string | null;
   blockType: 'projectMermaidDiagramBlock';
 }
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Markdown Table Block".
+ */
+export interface MarkdownTableBlock {
+  markdownTableMarkdown?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'markdownTableBlock';
+}
 
 
 declare module 'payload' {

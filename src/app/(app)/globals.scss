@@ -5,7 +5,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+ul li:has(ul),
+ol li:has(ol) {
+  list-style: none;
+}
+ol > li > ol > li {
+  list-style: lower-alpha;
+}
 @layer base {
   ol > li {
     display: inline-block !important;

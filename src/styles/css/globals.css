@@ -10,8 +10,10 @@ svg#mermaid {
   background: black;
 } 
 
+
 @layer base {
   :root {
+
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
@@ -41,6 +43,10 @@ svg#mermaid {
     --ring: 240 10% 3.9%;
 
     --radius: 0.5rem;
+  }
+
+  ol, li {
+    visibility: hidden;
   }
 
   .dark {
