@@ -13,9 +13,6 @@ ol > li > ol > li {
   list-style: lower-alpha;
 }
 @layer base {
-  ol > li {
-    display: inline-block !important;
-  }
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;

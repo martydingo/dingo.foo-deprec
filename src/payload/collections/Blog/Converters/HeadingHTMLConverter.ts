@@ -1,5 +1,5 @@
-import type { HTMLConverter } from '@payloadcms/richtext-lexical'
-import type { SerializedTextNode } from 'lexical'
+import type { HTMLConverter, SerializedBlockNode } from '@payloadcms/richtext-lexical'
+import type { SerializedLexicalNode } from 'lexical'
 import { CodeBlockHTMLConverter } from './BlockHTMLCoverters/CodeBlockHTMLConverter'
 import { BlogMermaidDiagramBlockHTMLConverter } from './BlockHTMLCoverters/BlogMermaidDiagramBlockHTMLConverter'
 
@@ -14,8 +14,8 @@ function slugify(text: string) {
     .replace(/-+$/, '') // Trim - from end of text
 }
 
-export const HeadingHTMLConverter: any = {
-  converter: async ({ node }) => {
+export const HeadingHTMLConverter: HTMLConverter<SerializedBlockNode> = {
+  converter: async ({ node }: { node: any }) => {
     switch (node.tag) {
       case 'h1':
         return `<h1 id="${slugify(node.children[0].text)}" className = "text-center xl:text-left">${
@@ -32,6 +32,7 @@ export const HeadingHTMLConverter: any = {
       case 'h6':
         return `<h6 id="${slugify(node.children[0].text)}">${node.children[0].text}</h6>`
     }
+    return ''
   },
   nodeTypes: ['Heading'],
 }

@@ -1,5 +1,10 @@
 import { RichTextField } from 'payload/types'
-import { BlocksFeature, lexicalEditor, HTMLConverterFeature } from '@payloadcms/richtext-lexical'
+import {
+  BlocksFeature,
+  lexicalEditor,
+  HTMLConverterFeature,
+  FeatureProviderServer,
+} from '@payloadcms/richtext-lexical'
 
 import CodeBlock from '../Blocks/CodeBlock'
 import { BlockHTMLMuxFeature } from '../Features/BlockHTMLMuxFeature'
@@ -12,14 +17,17 @@ export const Content: RichTextField = {
   label: 'Content',
   type: 'richText',
   editor: lexicalEditor({
-    features: ({ defaultFeatures }) => [
-      ...defaultFeatures,
-      HeadingHTMLConverterFeature({}),
-      HTMLConverterFeature({}),
-      BlockHTMLMuxFeature({}),
-      BlocksFeature({
-        blocks: [CodeBlock, BlogMermaidDiagramBlock, MarkdownTableBlock],
-      }),
-    ],
+    //@ts-ignore
+    features: ({ defaultFeatures }) => {
+      return [
+        ...defaultFeatures,
+        HeadingHTMLConverterFeature({}),
+        HTMLConverterFeature({}),
+        BlockHTMLMuxFeature({}),
+        BlocksFeature({
+          blocks: [CodeBlock, BlogMermaidDiagramBlock, MarkdownTableBlock],
+        }),
+      ]
+    },
   }),
 }

@@ -1,8 +1,9 @@
-import { Block } from 'payload/types'
+import { Block, FieldWithRichTextRequiredEditor } from 'payload/types'
 import { MarkdownTableMarkdown } from '../Fields/MarkdownTable/MarkdownTableMarkdown'
-import { MarkdownTableTitle } from '../Fields/MarkdownTable/MarkdownTableTitle'
 
-const MarkdownTableBlock: Block = {
+const MarkdownTableBlock: Omit<Block, 'fields'> & {
+  fields: FieldWithRichTextRequiredEditor[]
+} = {
   slug: 'markdownTableBlock',
   interfaceName: 'Markdown Table Block',
   fields: [MarkdownTableMarkdown],

@@ -1,9 +1,12 @@
+// @ts-nocheck
+
 import path from 'path'
 import fs from 'fs'
 import { mermaidThemeDirectives } from '@/styles/themes/mermaid/nightfox'
 import { mermaidFlowchartDirectives } from '@/styles/themes/mermaid/generic'
+import { HTMLConverter, SerializedBlockNode } from '@payloadcms/richtext-lexical'
 
-export const BlogMermaidDiagramBlockHTMLConverter = {
+export const BlogMermaidDiagramBlockHTMLConverter: HTMLConverter<SerializedBlockNode> = {
   converter: async ({ fields }) => {
     const mermaidUUID = `${fields.id}-${fields.blockName
       .replace(/ /g, '_')

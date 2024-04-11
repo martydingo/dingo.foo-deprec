@@ -1,6 +1,9 @@
+// @ts-nocheck
+
+import { HTMLConverter, SerializedBlockNode } from '@payloadcms/richtext-lexical'
 import showdown from 'showdown'
 
-export const MarkdownTableBlockHTMLConverter: any = {
+export const MarkdownTableBlockHTMLConverter: HTMLConverter<SerializedBlockNode> = {
   converter: async ({ fields }) => {
     const tableUUID = `${fields.id}-${fields.blockName
       .replace(/ /g, '_')
