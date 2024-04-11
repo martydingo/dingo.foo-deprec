@@ -22,7 +22,7 @@ const Projects: CollectionConfig = {
   admin: {
     group: 'Projects',
     livePreview: {
-      url: ({ data, documentInfo, locale }) => {
+      url: ({ data, locale }) => {
         return `/projects/${data.slug}`
       },
     },

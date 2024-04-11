@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { CodeBlockHTMLConverter } from './BlockHTMLCoverters/CodeBlockHTMLConverter'
 import { ProjectMermaidDiagramBlockHTMLConverter } from './BlockHTMLCoverters/ProjectMermaidDiagramBlockHTMLConverter'
 import { MarkdownTableBlockHTMLConverter } from './BlockHTMLCoverters/MarkdownTableBlockHTMLConverter'

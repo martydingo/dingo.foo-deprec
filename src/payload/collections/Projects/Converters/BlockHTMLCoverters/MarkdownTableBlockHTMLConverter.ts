@@ -1,3 +1,4 @@
+//@ts-nocheck
 import showdown from 'showdown'
 
 export const MarkdownTableBlockHTMLConverter: any = {

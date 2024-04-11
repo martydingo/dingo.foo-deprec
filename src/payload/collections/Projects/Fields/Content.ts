@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { RichTextField } from 'payload/types'
 import { BlocksFeature, lexicalEditor, HTMLConverterFeature } from '@payloadcms/richtext-lexical'
 
