@@ -32,7 +32,7 @@ export default async function Test() {
   const htmlTable = markdownConverter.makeHtml(markdownTable)
   return (
     <div className="container prose dark:prose-invert mt-8">
-        <TableComponent htmlTable={htmlTable} />
+        <TableComponent tableCaption="test" htmlTable={htmlTable} />
     </div>
   )
 }

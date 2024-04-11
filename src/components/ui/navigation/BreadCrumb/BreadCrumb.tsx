@@ -1,5 +1,6 @@
 'use client'
 
+import { Blog } from "@/payload/payload-types"
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -56,7 +57,7 @@ export default function BreadCrumb({ rootPage, curPage, allPosts }: { rootPage: 
                                     {
                                         allPosts
                                             // .filter((post) => post.title !== curPage.title)
-                                            .map((post, index) => (
+                                            .map((post: Blog, index: number) => (
                                                 <DropdownMenuItem key={`breadcrumb-posts-${index}`}>
                                                     <Link href={`${rootPage.href}/${post.slug}`}>{post.title}</Link>
                                                 </DropdownMenuItem>

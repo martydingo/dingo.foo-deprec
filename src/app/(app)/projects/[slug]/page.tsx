@@ -29,13 +29,15 @@ export default async function ProjectPost({ params }: { params: { slug: string }
       },
     },
   })
-
+  //@ts-expect-error
   const headings = projectPost.docs[0].content.root.children
     .filter((childNode) => childNode.type === 'heading' && childNode.tag !== 'h1')
     .map((heading, index) => {
       return {
         index: index,
+        //@ts-expect-error
         title: heading.children[0].text,
+        //@ts-expect-error
         href: slugify(heading.children[0].text),
       }
     })

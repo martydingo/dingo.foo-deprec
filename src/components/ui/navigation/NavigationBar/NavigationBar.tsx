@@ -35,6 +35,7 @@ export default function NavigationBar() {
                     >
                       {/* <Icons.logo className="h-6 w-6" /> */}
                       <Image
+                        alt="dingo.foo logo"
                         className="rounded"
                         src="/images/site/logo-256x256.png"
                         width={96}

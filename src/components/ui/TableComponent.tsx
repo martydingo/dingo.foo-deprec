@@ -57,19 +57,19 @@ export default function TableComponent({
         {tableCaption && <TableCaption>{tableCaption}</TableCaption>}
         <TableHeader>
           <TableRow>
-            {tableHeaders.map((tableHeader) => (
-              <TableHead>
+            {tableHeaders.map((tableHeader, index) => (
+              <TableHead key={`th-${index}`}>
                 <span dangerouslySetInnerHTML={{"__html": tableHeader}}/>
               </TableHead>
             ))}
           </TableRow>
         </TableHeader>
         <TableBody>
-          {tableBody.map((tableRow) => {
+          {tableBody.map((tableRow, index) => {
             return (
-              <TableRow>
+              <TableRow key={`tr-${index}`}>
                 {tableRow.map((tableCell) => (
-                  <TableCell>
+                  <TableCell key={`cell-${index}`}>
                     <span dangerouslySetInnerHTML={{"__html": tableCell}}/>
                     </TableCell>
                 ))}

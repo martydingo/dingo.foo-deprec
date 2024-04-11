@@ -4,11 +4,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import AuthorAvatar from '../AuthorAvatar'
 import TagBadge from '../TagBadge'
+import { Blog, BlogImage } from '@payload-types'
 
-export default function BlogListBasic({ pages }) {
+export default function BlogListBasic({ pages }: { pages: { docs: Blog[] } }) {
   return (
     <div className="prose dark:prose-invert mx-auto">
       {pages.docs.map((page, index) => {
+        const previewImage: BlogImage = page.previewImage as BlogImage
         const author: User = page.author as User
         return (
           <div key="">
@@ -17,9 +19,9 @@ export default function BlogListBasic({ pages }) {
                 <Image
                   className="self-center mx-auto"
                   alt={`${page.title} preview image`}
-                  src={`${page.previewImage.sizes.square_small.url}`}
-                  width={page.previewImage.sizes.square_small.width / 2}
-                  height={page.previewImage.sizes.square_small.height / 2}
+                  src={`${previewImage.sizes?.square_small?.url}`}
+                  width={previewImage?.sizes?.square_small?.width! / 2}
+                  height={previewImage?.sizes?.square_small?.height! / 2}
                 />
                 <p className="text-3xl font-titillium not-prose tracking-wider text-center xl:text-start">
                   {page.title}
@@ -44,7 +46,7 @@ export default function BlogListBasic({ pages }) {
                 </div>
               </Link>
               <section className="">
-                <div dangerouslySetInnerHTML={{ __html: page.summary_html }} />
+                <div dangerouslySetInnerHTML={{ "__html": page.summary_html as TrustedHTML }} />
               </section>
             </div>
             {index < pages.docs.length - 1 && <Separator className="my-12" />}

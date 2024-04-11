@@ -24,13 +24,13 @@ function slugify(text: string) {
         .replace(/-+$/, "") // Trim - from end of text
 }
 
-function logSelect(value){
+function logSelect(value: string){
     if(window === undefined) return
     window.location.href = `${window.location.href.split("#")[0]}#${slugify(value)}`
 }
 
-export default function HeadingSelect({ headings }: { headings: any }) {
-    let [selectedHeading, selectHeading] = React.useState()
+export default function HeadingSelect({ headings }: { headings: { title: string, href: string, index: number }[] }) {
+    let [selectedHeading, selectHeading] = React.useState('')
     
     
     React.useEffect(() => {

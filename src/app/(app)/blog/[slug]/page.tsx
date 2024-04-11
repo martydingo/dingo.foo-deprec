@@ -38,6 +38,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
     const headings = BlogPost.content!.root.children
         .filter((childNode) => childNode.type === "heading" && childNode.tag !== "h1")
+        //@ts-expect-error
         .map((heading, index) => { return { "index": index, "title": heading.children[0].text, "href": slugify(heading.children[0].text) } })
         .sort((headingA, headingB) => headingA.index - headingB.index)
 

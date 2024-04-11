@@ -28,7 +28,7 @@ const Blog: CollectionConfig = {
   admin: {
     group: 'Blog',
     livePreview: {
-      url: ({ data, documentInfo, locale }) => {
+      url: ({ data, locale }) => {
         return `/blog/${data.slug}`
       },
     },
