@@ -5,6 +5,7 @@ import CodeBlock from '../Blocks/CodeBlock'
 import { BlockHTMLMuxFeature } from '../Features/BlockHTMLMuxFeature'
 import ProjectMermaidDiagramBlock from '../Blocks/ProjectMermaidDiagramBlock'
 import { HeadingHTMLConverterFeature } from '../Features/HeadingHTMLConverterFeature'
+import MarkdownTableBlock from '../Blocks/MarkdownTableBlock'
 
 export const Content: RichTextField = {
   name: 'content',
@@ -17,7 +18,7 @@ export const Content: RichTextField = {
       HTMLConverterFeature({}),
       BlockHTMLMuxFeature({}),
       BlocksFeature({
-        blocks: [CodeBlock, ProjectMermaidDiagramBlock],
+        blocks: [CodeBlock, ProjectMermaidDiagramBlock, MarkdownTableBlock],
       }),
     ],
   }),
