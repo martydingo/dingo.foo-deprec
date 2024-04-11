@@ -13,8 +13,8 @@ export default function BlogPostHeader({ page }: { page: Blog }) {
             <AuthorAvatar author={author} />
           </div>
           <div className="flex flex-col not-prose mb-5">
-            <p className="text-sm prose dark:prose-invert">Authored by {author.name}</p>
-            <p className="text-sm prose dark:prose-invert">{new Date(page.date).toDateString()}</p>
+            <p className="text-sm font-light prose dark:prose-invert">Authored by {author.name}</p>
+            <p className="text-sm font-thin prose dark:prose-invert">{new Date(page.date).toDateString()}</p>
           </div>
         </div>
         <div className='justify-center xl:justify-start'>

@@ -22,10 +22,10 @@ export default function TableComponent({
     tableDiv.getElementsByTagName('thead')[0].getElementsByTagName('th'),
   ).map((thElement) => {
     let returnHeader
-    if(thElement.innerHTML){
-      returnHeader = thElement.innerHTML!
+    if(thElement.firstElementChild){
+      returnHeader = thElement.firstElementChild!.innerHTML
     } else {
-      returnHeader = thElement.textContent!
+      returnHeader = thElement.innerText
     }
     return returnHeader
   })
@@ -38,16 +38,17 @@ export default function TableComponent({
     const tdArray = Array.from(trElement.getElementsByTagName('td')).map(
       (tdElement) => {
         let returnCell
-        if(tdElement.firstElementChild){
-          returnCell = tdElement.innerHTML!
+        if(tdElement.children[0]){
+          returnCell = tdElement.children[0].innerHTML
         } else {
-          returnCell = tdElement.textContent!
+          returnCell = tdElement.innerText
         }
         return returnCell
       }
     )
     tableBody.push(tdArray)
   })
+  console.log(tableBodyElement)
 
   console.log(tableBody)
 
@@ -71,6 +72,7 @@ export default function TableComponent({
                 {tableRow.map((tableCell) => (
                   <TableCell>
                     <span dangerouslySetInnerHTML={{"__html": tableCell}}/>
+                    {tableCell}
                     </TableCell>
                 ))}
               </TableRow>
