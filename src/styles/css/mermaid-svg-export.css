@@ -1,0 +1,44 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+svg {
+    background: var(--mermaid-bg, #020817) !important;
+}
+
+.nodeLabel {
+    color: var(--tw-prose-invert-body, white) !important;
+    height: max-content !important;
+    max-height: max-content;
+}
+
+.subgraph-lvl-0 {
+    fill: #131a24 !important;
+    stroke: #192330 !important;
+}
+
+.subgraph-lvl-1 {
+    fill: #192330 !important;
+    stroke: #212e3f !important;
+
+}
+
+.subgraph-lvl-2 {
+    fill: #212e3f !important;
+    stroke: #29394f !important;
+
+}
+
+.subgraph-lvl-3 {
+    fill: #29394f !important;
+    stroke: #39506d !important;
+
+}
+
+.label-container {
+    fill: #29394f !important;
+    stroke: var(--border) !important;
+
+}
+
+.label foreignObject {
+    overflow: visible !important;
+}

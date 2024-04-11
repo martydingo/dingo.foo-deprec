@@ -35,10 +35,11 @@ export default function NavigationBar() {
                     >
                       {/* <Icons.logo className="h-6 w-6" /> */}
                       <Image
+                        alt="dingo.foo logo"
                         className="rounded"
-                        src="/images/site/logo-64x64.png"
-                        width={64}
-                        height={64}
+                        src="/images/site/logo-256x256.png"
+                        width={96}
+                        height={96}
                       />
                       <div className="mb-2 mt-4 text-lg font-medium font-titillium">dingo.foo</div>
                       <p className="text-sm leading-tight text-muted-foreground">

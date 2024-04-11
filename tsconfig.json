@@ -21,6 +21,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@payload-config": ["src/payload/payload.config.ts"],
+      "@payload-types": ["src/payload/payload-types.ts"],
       "@/shadcn-ui/*": ["./src/components/lib/shadcn-ui/*"]
     }
   },

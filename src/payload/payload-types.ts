@@ -292,6 +292,12 @@ export interface Blog {
       }[]
     | null;
   previewImage?: string | BlogImage | null;
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   summary?: {
     root: {
       type: string;
@@ -338,6 +344,12 @@ export interface Project {
   date: string;
   author: string | User;
   previewImage?: string | ProjectImage | null;
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   summary?: {
     root: {
       type: string;
@@ -427,7 +439,17 @@ export interface MermaidDiagramBlock {
   mermaidDiagramCode?: string | null;
   id?: string | null;
   blockName?: string | null;
-  blockType: 'mermaidDiagramBlock';
+  blockType: 'projectMermaidDiagramBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Markdown Table Block".
+ */
+export interface MarkdownTableBlock {
+  markdownTableMarkdown?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'markdownTableBlock';
 }
 
 
