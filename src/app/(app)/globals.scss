@@ -5,7 +5,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+ul li:has(ul),
+ol li:has(ol) {
+  list-style: none;
+}
+ol > li > ol > li {
+  list-style: lower-alpha;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -28,7 +34,6 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
-
   }
 
   // svg[id^='mermaid-svg'] {
