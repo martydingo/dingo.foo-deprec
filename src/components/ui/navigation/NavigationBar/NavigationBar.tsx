@@ -22,10 +22,10 @@ export default function NavigationBar() {
       <NavigationMenu className="mt-3">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>
+            <NavigationMenuTrigger >
               <p className="text-2xl font-titillium tracking-widest ml-3">dingo.foo</p>
             </NavigationMenuTrigger>
-            <NavigationMenuContent>
+            <NavigationMenuContent  >
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>

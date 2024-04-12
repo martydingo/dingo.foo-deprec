@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap');
 
+@import '../../styles/css/halcyon.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,7 +23,7 @@ ol > li > ol > li {
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
     --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: var(--nord-snow-storm-3);
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
@@ -29,7 +31,7 @@ ol > li > ol > li {
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: var(--nord-snow-storm-3);
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
@@ -41,110 +43,24 @@ ol > li > ol > li {
   // }
 
   .dark {
-    --halcyon-base-blue-01: #171c28;
-    --halcyon-base-blue-02: #1d2433;
-    --halcyon-base-blue-03: #2f3b54;
-    --halcyon-base-blue-04: #6679a4;
-    --halcyon-base-blue-05: #8695b7;
-    --halcyon-base-grey-dark: #a2aabc;
-    --halcyon-base-grey-light: #d7dce2;
-    --halcyon-accent: #ffcc66;
-    --halcyon-accent-h: 40;
-    --halcyon-accent-s: 100%;
-    --halcyon-accent-l: 70%;
-    --halcyon-palette-cyan: #5ccfe6;
-    --halcyon-palette-lime: #bae67e;
-    --halcyon-palette-orange: #ffae57;
-    --halcyon-palette-yellow: #ffd580;
-    --halcyon-palette-lilac: #c3a6ff;
-    --halcyon-palette-salmon: #ef6b73;
-    --halcyon-code-variable: var(--halcyon-base-grey-dark);
-    --halcyon-code-function: var(--halcyon-palette-yellow);
-    --halcyon-code-operator: var(--halcyon-palette-orange);
-    --halcyon-code-error: var(--halcyon-palette-salmon);
-    --halcyon-code-keyword: var(--halcyon-palette-lilac);
-    --halcyon-base-blue-01-02-mix: color-mix(
-      in hsl,
-      var(--halcyon-base-blue-01),
-      var(--halcyon-base-blue-02)
-    );
-    --halcyon-base-blue-02-03-mix: color-mix(
-      in hsl,
-      var(--halcyon-base-blue-02),
-      var(--halcyon-base-blue-03)
-    );
-    --halcyon-base-blue-03-04-mix: color-mix(
-      in hsl,
-      var(--halcyon-base-blue-03),
-      var(--halcyon-base-blue-04)
-    );
-    --halcyon-base-blue-04-05-mix: color-mix(
-      in hsl,
-      var(--halcyon-base-blue-04),
-      var(--halcyon-base-blue-05)
-    );
-    --halcyon-base-grey-mix: color-mix(
-      in hsl,
-      var(--halcyon-base-grey-light),
-      var(--halcyon-base-grey-dark)
-    );
-    --halcyon-text-normal: var(--halcyon-base-grey-light);
-    --halcyon-text-muted: #8695b799;
-    --halcyon-accent-hover: var(--halcyon-palette-yellow);
-    --halcyon-palette-lilac-hover: color-mix(
-      in hsl shorter hue,
-      var(--halcyon-palette-lilac),
-      var(--halcyon-base-grey-dark)
-    );
-    --halcyon-palette-cyan-hover: color-mix(
-      in hsl shorter hue,
-      var(--halcyon-palette-cyan),
-      var(--halcyon-base-grey-dark)
-    );
-    --halcyon-palette-blue: #7099db;
-    --halcyon-palette-pink: #f9cff2;
-    --halcyon-base-grey-tab: #71777f;
-    --halcyon-base-grey-token: #586582;
-    --halcyon-base-grey-scroll: #3f495e;
-    --halcyon-base-grey-scroll-hover: #5c6782;
 
-    --halcyon-base-blue-01-hsl: 222.4 -0.3 31.5;
-    --halcyon-base-blue-02-hsl: 220.9 -0.3 40;
-    --halcyon-base-blue-03-hsl: 220.5 -0.3 65.5;
-    --halcyon-base-blue-04-hsl: 221.6 -0.2 133;
-    --halcyon-base-blue-05-hsl: 221.6 -0.2 158.5;
-    --halcyon-base-grey-dark-hsl: 221.5 -0.1 175;
-    --halcyon-base-grey-light-hsl: 212.7 -0 220.5;
-    --halcyon-accent-hsl: 40 -0.4 178.5;
-    --halcyon-palette-cyan-hsl: 190 -0.4 161;
-    --halcyon-palette-lime-hsl: 85.4 -0.3 178;
-    --halcyon-palette-orange-hsl: 31.1 -0.5 171;
-    --halcyon-palette-yellow-hsl: 40.2 -0.3 191.5;
-    --halcyon-palette-lilac-hsl: 259.6 -0.2 210.5;
-    --halcyon-palette-salmon-hsl: 356.4 -0.4 173;
-    --halcyon-palette-blue-hsl: 217 -0.3 165.5;
-    --halcyon-palette-pink-hsl: 310 -0.1 228;
-    --halcyon-base-grey-tab-hsl: 214.3 -0.1 120;
-    --halcyon-base-grey-token-hsl: 221.4 -0.2 109;
-    --halcyon-base-grey-scroll-hsl: 220.6 -0.2 78.5;
-    --halcyon-base-grey-scroll-hover-hsl: 222.6 -0.2 111;
 
     --background: var(--halcyon-base-blue-01-hsl);
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --foreground: var(--nord-snow-storm-3);
+    --card: var(--nord-polar-night-2);
+    --card-foreground: var(--nord-snow-storm-3);
+    --popover: var(--nord-polar-night-2);
+    --popover-foreground: var(--nord-snow-storm-3);
+    --primary: var(--nord-snow-storm-3);
+    --primary-foreground:var(--nord-snow-storm-3)
     --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --secondary-foreground: var(--nord-snow-storm-3);
+    --muted: var(--nord-polar-night-1);
+    --muted-foreground: var(--nord-snow-storm-1);
+    --accent: var(--nord-polar-night-3);
+    --accent-foreground: var(--nord-snow-storm-3);
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: var(--nord-snow-storm-3);
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9;
