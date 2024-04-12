@@ -12,7 +12,7 @@ export const CodeBlockHTMLConverter: any = {
     // })
     const html = codeToHtml(fields.codeContent, {
       lang: fields.codeLanguage,
-      theme: 'solarized-dark',
+      theme: 'nord',
     })
     return html
   },

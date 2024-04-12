@@ -14,7 +14,7 @@ export const CodeBlockHTMLConverter: HTMLConverter<SerializedBlockNode> = {
     // })
     const html = codeToHtml(fields.codeContent, {
       lang: fields.codeLanguage,
-      theme: 'solarized-dark',
+      theme: 'nord',
     })
     return html
   },
