@@ -24,7 +24,7 @@ export const ProjectClient: React.FC<{
         console.log(data)
     })
     return (
-        <div className='mt-6 prose dark:prose-invert xl:max-w-5xl xl:prose-xl'>
+        <div className='mt-6 prose dark:prose-invert xl:max-w-5xl'>
             <h1>{data.title}</h1>
             <div>
                 <div dangerouslySetInnerHTML={{ '__html': data.content_html as string }} />
