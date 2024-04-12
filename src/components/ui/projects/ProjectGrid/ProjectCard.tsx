@@ -24,10 +24,10 @@ export default function ProjectCard({ project }: { project: Project }) {
         >
           <Card className="bg-transparent backdrop-brightness-[.3] backdrop-blur-[2px] hover:backdrop-brightness-50 hover:backdrop-blur-none duration-200 aspect-square h-full w-full">
             <CardHeader>
-              <CardTitle className="text-center text-2xl font-normal font-titillium items-center">
+              <CardTitle className="text-center prose-invert text-2xl font-normal font-titillium items-center">
                 {project.title}
               </CardTitle>
-              <CardDescription className="text-center text-white font-light font-titillium">
+              <CardDescription className="text-center prose-invert font-light font-titillium">
                 {new Date(project.date).toDateString()}
               </CardDescription>
             </CardHeader>

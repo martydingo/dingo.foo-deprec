@@ -1,20 +1,22 @@
-// @ts-nocheck
+//@ts-nocheck
 
-import { HTMLConverter, SerializedBlockNode } from '@payloadcms/richtext-lexical'
 import fs from 'fs'
-import { ArrayField } from 'payload/types'
-import { codeToHtml } from 'shiki'
+import path from 'path'
+import { getHighlighter } from 'shiki'
 
-export const CodeBlockHTMLConverter: HTMLConverter<SerializedBlockNode> = {
+export const CodeBlockHTMLConverter: any = {
   converter: async ({ fields }) => {
-    // const theme = JSON.parse(fs.readFileSync('@/styles/themes/shiki/greyscale.json', 'utf8'))
-    // const highlighter = await getHighlighter({
-    //   themes: [theme],
-    //   langs: [],
-    // })
-    const html = codeToHtml(fields.codeContent, {
+    const theme = JSON.parse(
+      fs.readFileSync(path.resolve(process.cwd(), './src/styles/themes/shiki/halcyon.json')),
+      'utf8',
+    )
+    const highlighter = await getHighlighter({
+      themes: [theme],
+      langs: [fields.codeLanguage],
+    })
+    const html = highlighter.codeToHtml(fields.codeContent, {
       lang: fields.codeLanguage,
-      theme: 'nord',
+      theme: 'Halcyon',
     })
     return html
   },

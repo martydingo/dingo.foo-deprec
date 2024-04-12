@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap');
 
 @import '../../styles/css/halcyon.css';
+@import '../../styles/css/nord.css';
 
 @tailwind base;
 @tailwind components;
@@ -14,27 +15,28 @@ ol li:has(ol) {
 ol > li > ol > li {
   list-style: lower-alpha;
 }
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 222.2 84% 4.9%;
+    --background: var(--nord-snow-storm-2);
+    --foreground: var(--nord-polar-night-1);
+    --card: var(--nord-snow-storm-3);
+    --card-foreground: var(--nord-polar-night-1);
+    --popover: var(--nord-snow-storm-2);
+    --popover-foreground: var(--nord-polar-night-1);
+    --primary: var(--nord-aurora-green);
+    --primary-foreground: var(--nord-polar-night-1);
+    --secondary: var(--nord-aurora-orange);
+    --secondary-foreground: var(--nord-polar-night-1);
+    --muted: var(--nord-snow-storm-1);
+    --muted-foreground: var(--nord-snow-storm-1);
+    --accent: var(--nord-snow-storm-1);
+    --accent-foreground: var(--nord-polar-night-1);
+    --destructive: var(--nord-aurora-red);
+    --destructive-foreground: var(--nord-polar-night-1);
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: var(--nord-polar-night-1);
     --radius: 0.5rem;
   }
 
