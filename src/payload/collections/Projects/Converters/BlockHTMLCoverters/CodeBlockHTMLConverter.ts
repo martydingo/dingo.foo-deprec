@@ -7,7 +7,7 @@ import { getHighlighter } from 'shiki'
 export const CodeBlockHTMLConverter: any = {
   converter: async ({ fields }) => {
     const theme = JSON.parse(
-      fs.readFileSync(path.resolve(process.cwd), './src/styles/themes/shiki/halcyon.json'),
+      fs.readFileSync(path.resolve(process.cwd(), './src/styles/themes/shiki/halcyon.json')),
       'utf8',
     )
     const highlighter = await getHighlighter({
@@ -16,7 +16,7 @@ export const CodeBlockHTMLConverter: any = {
     })
     const html = highlighter.codeToHtml(fields.codeContent, {
       lang: fields.codeLanguage,
-      theme: 'halcyon',
+      theme: 'Halcyon',
     })
     return html
   },

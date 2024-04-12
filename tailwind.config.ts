@@ -13,18 +13,7 @@ const config = {
         '2xl': '1400px',
       },
     },
-    typography: ({ theme }) => ({
-      DEFAULT: {
-        css: {
-          '--tw-prose-invert-body': 'hsl(var(--primary-foreground))',
-        },
-      },
-      invert: {
-        css: {
-          '--tw-prose-invert-body': 'hsl(var(--primary-foreground))',
-        },
-      },
-    }),
+
     extend: {
       fontFamily: {
         titillium: ['Titillium Web'],
