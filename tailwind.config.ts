@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 import typography from '@tailwindcss/typography'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config = {
   darkMode: ['class'],
@@ -16,7 +17,8 @@ const config = {
 
     extend: {
       fontFamily: {
-        titillium: ['Titillium Web'],
+        sans: ['Karla', ...defaultTheme.fontFamily.sans],
+        serif: ['Titillium Web', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         border: 'hsl(var(--border))',
