@@ -9,7 +9,7 @@ export default function BlogListBasic({ pages }: { pages: { docs: Blog[] } }) {
   return (
     <div className="prose dark:prose-invert mx-auto">
       {pages.docs
-        .slice(0)
+        .slice(3)
         .map((page, index) => {
           const author: User = page.author as User
           return (

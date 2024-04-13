@@ -23,14 +23,13 @@ export default async function Project({ searchParams }: { searchParams: { [key: 
   return (
     <div className='container xl:container '>
       <div className='max-w-5xl mx-auto'>
-        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight mt-3">
           Projects
         </h2>
         <p className="text-sm text-muted-foreground">
           Hover over a project to see more details
         </p>
-        <div className="pt-16 flex w-screen justify-around">
-
+        <div className="pt-12 flex justify-center">
           <ProjectGrid projects={pages.docs} />
           {/* <ProjectCarousel projects={pages.docs} /> */}
         </div>

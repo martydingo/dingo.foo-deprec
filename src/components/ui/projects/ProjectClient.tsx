@@ -19,16 +19,13 @@ export const ProjectClient: React.FC<{
         serverURL: "http://10.2.3.130:3000/",
         depth: 1,
     })
-    React.useEffect(() =>{
-        
+    React.useEffect(() => {
+
         console.log(data)
     })
     return (
-        <div className='mt-6 prose dark:prose-invert xl:max-w-5xl'>
-            <h1>{data.title}</h1>
-            <div>
-                <div dangerouslySetInnerHTML={{ '__html': data.content_html as string }} />
-            </div>
+        <div>
+            <div dangerouslySetInnerHTML={{ '__html': data.content_html as string }} />
         </div>
 
     )

@@ -2,6 +2,7 @@ import { getPayload } from 'payload'
 import payloadConfig from '@payload-config'
 import BreadCrumb from '@/components/ui/navigation/BreadCrumb/BreadCrumb'
 import { ProjectClient } from '@/components/ui/projects/ProjectClient'
+import ProjectHeader from '@/components/ui/projects/ProjectHeader'
 
 function slugify(text: string) {
   return text
@@ -46,19 +47,20 @@ export default async function ProjectPost({ params }: { params: { slug: string }
   return (
     <div className="flex flex-col">
       <div className="items-center basis-1/3 mx-auto xl:container xl:max-w-5xl gap-4 flex flex-col xl:flex-row xl:justify-between">
-          <BreadCrumb
-            rootPage={{ title: 'Projects', href: '/projects' }}
-            curPage={{
-              title: `${projectPost.docs[0].title as string}`,
-              href: `/project/${projectPost.docs[0].slug as string}`,
-            }}
-            allPosts={allProjectPosts.docs}
-          />
+        <BreadCrumb
+          rootPage={{ title: 'Projects', href: '/projects' }}
+          curPage={{
+            title: `${projectPost.docs[0].title as string}`,
+            href: `/project/${projectPost.docs[0].slug as string}`,
+          }}
+          allPosts={allProjectPosts.docs}
+        />
       </div>
-        <div className="basis-1/3 items-center mx-auto xl:container xl:max-w-5xl ">
-          <ProjectClient page={projectPost.docs[0]} />
-        </div>
-      <div className="basis-1/3"></div>
+      <div className="basis-1/3 items-center mx-auto xl:container xl:max-w-5xl mt-6 prose dark:prose-invert">
+        <ProjectHeader page={projectPost.docs[0]} />
+        <ProjectClient page={projectPost.docs[0]} />
+        <div className="basis-1/3"></div>
+      </div>
     </div>
   )
 }

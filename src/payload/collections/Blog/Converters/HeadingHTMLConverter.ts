@@ -14,8 +14,9 @@ function slugify(text: string) {
     .replace(/-+$/, '') // Trim - from end of text
 }
 
-export const HeadingHTMLConverter: HTMLConverter<SerializedBlockNode> = {
+export const HeadingHTMLConverter = {
   converter: async ({ node }: { node: any }) => {
+    console.log(`src/payload/collections/Blog/Converters/HeadingHTMLConverter.ts: HeadingHTMLConverter: converter: node: ${JSON.stringify(node)}`)
     switch (node.tag) {
       case 'h1':
         return `<h1 id="${slugify(node.children[0].text)}" className = "text-center xl:text-left">${
@@ -32,7 +33,6 @@ export const HeadingHTMLConverter: HTMLConverter<SerializedBlockNode> = {
       case 'h6':
         return `<h6 id="${slugify(node.children[0].text)}">${node.children[0].text}</h6>`
     }
-    return ''
   },
   nodeTypes: ['Heading'],
 }

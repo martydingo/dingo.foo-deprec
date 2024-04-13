@@ -350,6 +350,7 @@ export interface Project {
         id?: string | null;
       }[]
     | null;
+  repository?: string | null;
   summary?: {
     root: {
       type: string;

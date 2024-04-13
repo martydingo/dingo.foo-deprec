@@ -15,8 +15,8 @@ export const Content: RichTextField = {
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [
       ...defaultFeatures,
-      HeadingHTMLConverterFeature({}),
       HTMLConverterFeature({}),
+      HeadingHTMLConverterFeature({}),
       BlockHTMLMuxFeature({}),
       BlocksFeature({
         blocks: [CodeBlock, ProjectMermaidDiagramBlock, MarkdownTableBlock],

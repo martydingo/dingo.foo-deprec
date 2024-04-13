@@ -1,8 +1,4 @@
 //@ts-nocheck
-import type { HTMLConverter } from '@payloadcms/richtext-lexical'
-import type { SerializedTextNode } from 'lexical'
-import { CodeBlockHTMLConverter } from './BlockHTMLCoverters/CodeBlockHTMLConverter'
-import {} from './BlockHTMLCoverters/ProjectMermaidDiagramBlockHTMLConverter'
 
 function slugify(text: string) {
   return text
@@ -17,6 +13,8 @@ function slugify(text: string) {
 
 export const HeadingHTMLConverter: any = {
   converter: async ({ node }) => {
+      console.log(node)
+
     if (Object.values(node.children).length === 0) return
     switch (node.tag) {
       case 'h1':

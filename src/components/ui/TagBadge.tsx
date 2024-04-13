@@ -29,7 +29,7 @@ export default function TagBadge({
       </div>
       <div className="flex flex-wrap justify-center xl:justify-evenly gap-2">
         {tagArray.map((tag, index) => (
-          <Link href={`/tags/${tag.toLowerCase()}`} className={badgeVariants({ variant: "secondary" })} key={`tag-${tag}-${index}`}>{tag}</Link>
+          <Link href={`/tags/${tag.toLowerCase()}`} className={`no-underline ${badgeVariants({ variant: "secondary" })}`} key={`tag-${tag}-${index}`}>{tag}</Link>
         ))}
       </div>
     </div>
