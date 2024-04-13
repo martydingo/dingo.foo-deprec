@@ -21,30 +21,25 @@ export default async function Project({ searchParams }: { searchParams: { [key: 
   })
 
   return (
-    <div>
-      <div className="flex flex-col mt-8">
-        <div className="flex w-screen">
-          <div className="basis-1/3" />
-          <div className="basis-1/3"></div>
-          <div className="basis-1/3" />
+    <div className='container xl:container '>
+      <div className='max-w-5xl mx-auto'>
+        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+          Projects
+        </h2>
+        <p className="text-sm text-muted-foreground">
+          Hover over a project to see more details
+        </p>
+        <div className="pt-16 flex w-screen justify-around">
+
+          <ProjectGrid projects={pages.docs} />
+          {/* <ProjectCarousel projects={pages.docs} /> */}
         </div>
-        <div className="pt-16 flex w-screen">
-          <div className="basis-1/3" />
-          <div className="basis-10/12">
-            {/* <h1 className="self-center text-center text-4xl pb-16 font-titllium">
-                        All Posts
-                    </h1> */}
-            <ProjectGrid projects={pages.docs} />
-            {/* <ProjectCarousel projects={pages.docs} /> */}
+        {pages.totalPages > 1 &&
+          <div className='py-8'>
+            <ArticlePagination articles={pages} />
           </div>
-          <div className="basis-1/3" />
-        </div>
+        }
       </div>
-      {pages.totalPages > 1 &&
-        <div className='py-8'>
-          <ArticlePagination articles={pages} />
-        </div>
-      }
     </div>
   )
 }

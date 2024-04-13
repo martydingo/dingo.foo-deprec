@@ -23,22 +23,20 @@ export default async function Blog({ searchParams }: { searchParams: { [key: str
     const blogPosts = await payload.find({
         collection: "blog",
         page: page,
-        limit: 1
+        limit: 5
     })
 
     return (
         <div className="container xl:container">
-            <p className='text-2xl'>
-                Featured
-            </p>
+
+            {/* <p className="text-sm text-muted-foreground text-center">
+                My featured blog posts
+            </p> */}
             <BlogCarousel blogPosts={featuredBlogPosts} />
             <Separator className="my-5" />
-            <p className='text-2xl'>
-                Further Reading
-            </p>
             <BlogListBasic pages={blogPosts} />
             {blogPosts.totalPages > 1 &&
-                <div className='py-8'>
+                <div className='mb-5'>
                     <ArticlePagination articles={blogPosts} />
                 </div>
             }
