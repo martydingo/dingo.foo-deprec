@@ -49,7 +49,6 @@ export default function TableComponent({
     tableBody.push(tdArray)
   })
 
-  console.log(tableBody)
 
   return (
     <div>

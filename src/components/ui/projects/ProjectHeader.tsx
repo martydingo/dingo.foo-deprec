@@ -41,7 +41,7 @@ export default function ProjectHeader({ page }: { page: Project }) {
             </div>
           </div>
         }
-        <Separator />
+        <Separator className='mt-5' />
       </div>
     </div>
   )

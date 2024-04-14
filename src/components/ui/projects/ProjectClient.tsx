@@ -14,15 +14,13 @@ export const ProjectClient: React.FC<{
         createdAt: string
     }
 }> = ({ page: initialPage }) => {
-    const { data } = useLivePreview<PageType>({
+    const { data, isLoading } = useLivePreview<PageType>({
         initialData: initialPage,
-        serverURL: "http://10.2.3.130:3000/",
-        depth: 1,
+        serverURL: "http://172.28.4.29:3000/",
+        depth: 2,
     })
-    React.useEffect(() => {
 
-        console.log(data)
-    })
+
     return (
         <div>
             <div dangerouslySetInnerHTML={{ '__html': data.content_html as string }} />

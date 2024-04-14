@@ -5,11 +5,11 @@ import AuthorAvatar from '../AuthorAvatar'
 import TagBadge from '../TagBadge'
 import { Blog, BlogImage } from '@payload-types'
 
-export default function BlogListBasic({ pages }: { pages: { docs: Blog[] } }) {
+export default function BlogListBasic({ pages, sliceIndex }: { pages: { docs: Blog[] }, sliceIndex: number }) {
   return (
     <div className="prose dark:prose-invert mx-auto">
       {pages.docs
-        .slice(3)
+        .slice(sliceIndex)
         .map((page, index) => {
           const author: User = page.author as User
           return (

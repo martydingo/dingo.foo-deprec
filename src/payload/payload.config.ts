@@ -21,7 +21,7 @@ import {
 
 import siteImage from './collections/Media/SiteImage/SiteImage'
 import profileImage from './collections/Media/ProfileImage/ProfileImage'
-import Users from './collections/Users'
+import Users from './collections/Users/Users'
 import Blog from './collections/Blog/Blog'
 import blogImage from './collections/Media/BlogImage/BlogImage'
 import Projects from './collections/Projects/Projects'

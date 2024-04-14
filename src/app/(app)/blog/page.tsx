@@ -1,7 +1,6 @@
 import { getPayload } from "payload";
 import payloadConfig from "@payload-config"
 import BlogListBasic from "@/components/ui/blog/BlogListBasic";
-import { BlogListCarousel } from "@/components/ui/blog/BlogListCarousel";
 import ArticlePagination from "@/components/ui/ArticlePagination";
 import BlogCarousel from "@/components/ui/blog/BlogCarousel";
 import { Separator } from "@/shadcn-ui/separator";
@@ -27,14 +26,14 @@ export default async function Blog({ searchParams }: { searchParams: { [key: str
     })
 
     return (
-        <div className="container xl:container">
+        <div className="container xl:container xl:max-w-5xl max-w-2xl">
 
             {/* <p className="text-sm text-muted-foreground text-center">
                 My featured blog posts
             </p> */}
             <BlogCarousel blogPosts={featuredBlogPosts} />
-            <Separator className="my-5" />
-            <BlogListBasic pages={blogPosts} />
+            {blogPosts.totalDocs > 1 && <Separator className="my-5" />}
+            <BlogListBasic pages={blogPosts} sliceIndex={3} />
             {blogPosts.totalPages > 1 &&
                 <div className='mb-5'>
                     <ArticlePagination articles={blogPosts} />

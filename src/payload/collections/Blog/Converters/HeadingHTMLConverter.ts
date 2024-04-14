@@ -16,7 +16,6 @@ function slugify(text: string) {
 
 export const HeadingHTMLConverter = {
   converter: async ({ node }: { node: any }) => {
-    console.log(`src/payload/collections/Blog/Converters/HeadingHTMLConverter.ts: HeadingHTMLConverter: converter: node: ${JSON.stringify(node)}`)
     switch (node.tag) {
       case 'h1':
         return `<h1 id="${slugify(node.children[0].text)}" className = "text-center xl:text-left">${

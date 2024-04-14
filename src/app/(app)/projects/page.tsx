@@ -17,7 +17,8 @@ export default async function Project({ searchParams }: { searchParams: { [key: 
   const pages = await payload.find({
     collection: 'projects',
     page: page,
-    limit: 9
+    limit: 9,
+    depth: 2
   })
 
   return (

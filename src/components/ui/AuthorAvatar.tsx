@@ -13,7 +13,6 @@ export default function AuthorAvatar({ author }: { author: User }) {
             profileImageURL = profileImageDictionary.sizes!.avatar!.url
         }
     }
-    console.log(profileImageURL)
     return (
         <Avatar className="not-prose h-fit w-fit">
             {profileImageURL && <AvatarImage className="h-10" src={profileImageURL} />}

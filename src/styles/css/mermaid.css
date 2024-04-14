@@ -9,31 +9,41 @@
         height: max-content !important;
         max-height: max-content;
     }
+    .marker {
+        fill: #5E81ACcc !important;
+        stroke: #5E81AC !important;
+        stroke-width: 0.3px !important;
+    }
 
-    .edgePath {
-        stroke: #352c24 !important;
+    .edgePath, .flowchart-link {
+        stroke: #5E81ACcc !important;
+        stroke-width: 1px !important;
     }
 
     .subgraph-lvl-0 {
-        fill: #E6E4D9 !important;
-        stroke: #F2F0E5 !important;
+        fill: #D8DEE9  !important;
+        stroke: #D8DEE9 !important;
+        stroke-width: 1px !important;
     }
-
+    
     .subgraph-lvl-1 {
-        fill: #E6E4D9 !important;
-        stroke: #DAD8CE !important;
-
+        fill: #E5E9F0 !important;
+        stroke: #E5E9F0 !important;
+        stroke-width: 1px !important;
+        
     }
-
+    
     .subgraph-lvl-2 {
-        fill: #CECDC3 !important;
-        stroke: #B7B5AC !important;
+        fill: #D8DEE9 !important;
+        stroke: #D8DEE9 !important;
+        stroke-width: 1px !important;
     }
-
-
+    
+    
     .label-container {
-        fill: #CECDC3 !important;
-        stroke: #B7B5AC !important;
+        fill: #ECEFF4 !important;
+        stroke: #ECEFF4 !important;
+        stroke-width: 1px !important;
     }
 
     .label foreignObject {
@@ -45,10 +55,21 @@
 .dark {
     --mermaid-bg: transparent !important;
 
+    .edgePath, .flowchart-link {
+        stroke: #bae67ecc !important;
+        stroke-width: 1px !important;
+    }
+
     .nodeLabel {
         color: var(--tw-prose-invert-body) !important;
         height: max-content !important;
         max-height: max-content;
+    }
+
+    .marker {
+        fill: #bae67edd !important;
+        stroke: #bae67e99 !important;
+        stroke-width: 0.3px !important;
     }
 
     .subgraph-lvl-0 {
