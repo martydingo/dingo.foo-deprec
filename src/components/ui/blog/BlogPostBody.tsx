@@ -10,7 +10,7 @@ import TableWrapper from '../TableWrapper';
 export function BlogPostBody({ page }: { page: Blog }) {
     const { data } = useLivePreview<Blog>({
         initialData: page,
-        serverURL: "http://172.28.4.29:3000/",
+        serverURL: process.env.SERVER_URI as string | "",
         depth: 2,
     })
 

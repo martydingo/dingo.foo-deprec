@@ -7,7 +7,7 @@ import React from 'react';
 export function ProjectClient({ page }: { page: Project }) {
     const { data } = useLivePreview<Project>({
         initialData: page,
-        serverURL: "http://172.28.4.29:3000/",
+        serverURL: process.env.SERVER_URI as string | "",
         depth: 2,
     })
 
