@@ -27,7 +27,7 @@ import blogImage from './collections/Media/BlogImage/BlogImage'
 import Projects from './collections/Projects/Projects'
 import projectImage from './collections/Media/ProjectImage/ProjectImage'
 
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { postgresAdapter } from '@payloadcms/db-postgres'
 import { buildConfig } from 'payload/config'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
@@ -48,8 +48,10 @@ export default buildConfig({
   //     connectionString: process.env.POSTGRES_URI || ''
   //   }
   // }),
-  db: mongooseAdapter({
-    url: process.env.MONGODB_URI || '',
+  db: postgresAdapter({
+    pool: {
+      connectionString: process.env.POSTGRES_URI || '',
+    }
   }),
   admin: {
     //
