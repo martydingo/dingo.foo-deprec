@@ -13,7 +13,6 @@ export default function TableWrapper() {
       const tableContainer = document.getElementById(tableUUID)
       const root = createRoot(tableContainer!)
       root.render(<TableComponent tableCaption={tableCaption} htmlTable={tableContainer!.innerHTML} />)
-      console.log(tableContainer)
     })
   })
   return <div />

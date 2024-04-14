@@ -264,6 +264,22 @@ export interface User {
   id: string;
   name: string;
   profileImage?: string | ProfileImage | null;
+  about?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  about_html?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -350,6 +366,7 @@ export interface Project {
         id?: string | null;
       }[]
     | null;
+  repository?: string | null;
   summary?: {
     root: {
       type: string;

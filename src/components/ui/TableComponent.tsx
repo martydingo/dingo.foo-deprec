@@ -22,7 +22,7 @@ export default function TableComponent({
     tableDiv.getElementsByTagName('thead')[0].getElementsByTagName('th'),
   ).map((thElement) => {
     let returnHeader
-    if(thElement.innerHTML){
+    if (thElement.innerHTML) {
       returnHeader = thElement.innerHTML!
     } else {
       returnHeader = thElement.textContent!
@@ -38,7 +38,7 @@ export default function TableComponent({
     const tdArray = Array.from(trElement.getElementsByTagName('td')).map(
       (tdElement) => {
         let returnCell
-        if(tdElement.firstElementChild){
+        if (tdElement.firstElementChild) {
           returnCell = tdElement.innerHTML!
         } else {
           returnCell = tdElement.textContent!
@@ -49,7 +49,6 @@ export default function TableComponent({
     tableBody.push(tdArray)
   })
 
-  console.log(tableBody)
 
   return (
     <div>
@@ -58,8 +57,8 @@ export default function TableComponent({
         <TableHeader>
           <TableRow>
             {tableHeaders.map((tableHeader, index) => (
-              <TableHead key={`th-${index}`}>
-                <span dangerouslySetInnerHTML={{"__html": tableHeader}}/>
+              <TableHead key={`th-${index}-${Math.random().toString(36).substring(7)}`}>
+                <span dangerouslySetInnerHTML={{ "__html": tableHeader }} />
               </TableHead>
             ))}
           </TableRow>
@@ -67,11 +66,11 @@ export default function TableComponent({
         <TableBody>
           {tableBody.map((tableRow, index) => {
             return (
-              <TableRow key={`tr-${index}`}>
+              <TableRow key={`tr-${index}-${Math.random().toString(36).substring(7)}`}>
                 {tableRow.map((tableCell) => (
-                  <TableCell key={`cell-${index}`}>
-                    <span dangerouslySetInnerHTML={{"__html": tableCell}}/>
-                    </TableCell>
+                  <TableCell key={`cell-${index}-${Math.random().toString(36).substring(7)}`}>
+                    <span dangerouslySetInnerHTML={{ "__html": tableCell }} />
+                  </TableCell>
                 ))}
               </TableRow>
             )

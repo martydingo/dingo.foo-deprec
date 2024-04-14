@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss'
 import typography from '@tailwindcss/typography'
+import defaultTheme from 'tailwindcss/defaultTheme'
+import {tailwindcss_halcyon} from "./src/styles/themes/tailwindcss/halcyon"
 
 const config = {
   darkMode: ['class'],
@@ -13,9 +15,11 @@ const config = {
         '2xl': '1400px',
       },
     },
+
     extend: {
       fontFamily: {
-        titillium: ['Titillium Web'],
+        sans: ['Karla', ...defaultTheme.fontFamily.sans],
+        serif: ['Titillium Web', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -51,6 +55,7 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        halcyon: tailwindcss_halcyon,
       },
       borderRadius: {
         lg: 'var(--radius)',

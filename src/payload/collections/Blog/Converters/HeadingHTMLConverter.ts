@@ -14,7 +14,7 @@ function slugify(text: string) {
     .replace(/-+$/, '') // Trim - from end of text
 }
 
-export const HeadingHTMLConverter: HTMLConverter<SerializedBlockNode> = {
+export const HeadingHTMLConverter = {
   converter: async ({ node }: { node: any }) => {
     switch (node.tag) {
       case 'h1':
@@ -32,7 +32,6 @@ export const HeadingHTMLConverter: HTMLConverter<SerializedBlockNode> = {
       case 'h6':
         return `<h6 id="${slugify(node.children[0].text)}">${node.children[0].text}</h6>`
     }
-    return ''
   },
   nodeTypes: ['Heading'],
 }

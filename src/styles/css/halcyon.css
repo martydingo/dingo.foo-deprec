@@ -1,0 +1,61 @@
+:root {
+    --halcyon-base-blue-01-hsl: 222 27% 12%;
+    --halcyon-base-blue-02-hsl: 221 28% 16%;
+    --halcyon-base-blue-03-hsl: 221 28% 26%;
+    --halcyon-base-blue-04-hsl: 222 25% 52%;
+    --halcyon-base-blue-05-hsl: 222 25% 62%;
+    --halcyon-base-grey-dark-hsl: 222 16% 69%;
+    --halcyon-base-grey-light-hsl: 213 16% 86%;
+    --halcyon-accent-hsl: 40 100% 70%;
+    --halcyon-palette-cyan-hsl: 190 73% 63%;
+    --halcyon-palette-lime-hsl: 85 68% 70%;
+    --halcyon-palette-orange-hsl: 31 100% 67%;
+    --halcyon-palette-yellow-hsl: 40 100% 75%;
+    --halcyon-palette-lilac-hsl: 260 100% 83%;
+    --halcyon-palette-salmon-hsl: 356 80% 68%;
+    --halcyon-palette-blue-hsl: 217 60% 65%;
+    --halcyon-palette-pink-hsl: 310 78% 89%;
+    --halcyon-text-muted-hsl: 222 25% 62%;
+    --halcyon-base-grey-tab-hsl: 214 6% 47%;
+    --halcyon-base-grey-token-hsl: 221 19% 43%;
+    --halcyon-base-grey-scroll-hsl: 221 20% 31%;
+    --halcyon-base-grey-scroll-hover-hsl: 223 17% 44%;
+    --halcyon-base-blue-01-02-mix: color-mix(
+      in hsl,
+      var(--halcyon-base-blue-01),
+      var(--halcyon-base-blue-02)
+    );
+    --halcyon-base-blue-02-03-mix: color-mix(
+      in hsl,
+      var(--halcyon-base-blue-02),
+      var(--halcyon-base-blue-03)
+    );
+    --halcyon-base-blue-03-04-mix: color-mix(
+      in hsl,
+      var(--halcyon-base-blue-03),
+      var(--halcyon-base-blue-04)
+    );
+    --halcyon-base-blue-04-05-mix: color-mix(
+      in hsl,
+      var(--halcyon-base-blue-04),
+      var(--halcyon-base-blue-05)
+    );
+    --halcyon-base-grey-mix: color-mix(
+      in hsl,
+      var(--nord-snow-storm-3),
+      var(--halcyon-base-grey-dark)
+    );
+    --halcyon-text-normal: var(--nord-snow-storm-3);
+    --halcyon-text-muted: #8695b799;
+    --halcyon-accent-hover: var(--halcyon-palette-yellow);
+    --halcyon-palette-lilac-hover: color-mix(
+      in hsl shorter hue,
+      var(--halcyon-palette-lilac),
+      var(--halcyon-base-grey-dark)
+    );
+    --halcyon-palette-cyan-hover: color-mix(
+      in hsl shorter hue,
+      var(--halcyon-palette-cyan),
+      var(--halcyon-base-grey-dark)
+    );
+}

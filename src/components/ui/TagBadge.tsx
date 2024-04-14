@@ -1,8 +1,9 @@
 'use client'
 import { Blog } from '@payload-types'
-import { Badge } from '@/shadcn-ui/badge'
+import { badgeVariants } from "@/shadcn-ui/badge"
 import { Label } from '@/shadcn-ui/label'
 import { ChevronRightIcon } from '@radix-ui/react-icons'
+import Link from 'next/link'
 
 export default function TagBadge({
   collection,
@@ -28,7 +29,7 @@ export default function TagBadge({
       </div>
       <div className="flex flex-wrap justify-center xl:justify-evenly gap-2">
         {tagArray.map((tag, index) => (
-          <Badge variant={'secondary'} key={`tag-${tag}-${index}`}>{tag}</Badge>
+          <Link href={`/tags/${tag.toLowerCase()}`} className={`no-underline ${badgeVariants({ variant: "secondary" })}`} key={`tag-${tag}-${index}`}>{tag}</Link>
         ))}
       </div>
     </div>

@@ -1,18 +1,22 @@
 //@ts-nocheck
 
 import fs from 'fs'
-import { codeToHtml } from 'shiki'
+import path from 'path'
+import { getHighlighter } from 'shiki'
 
 export const CodeBlockHTMLConverter: any = {
   converter: async ({ fields }) => {
-    // const theme = JSON.parse(fs.readFileSync('@/styles/themes/shiki/greyscale.json', 'utf8'))
-    // const highlighter = await getHighlighter({
-    //   themes: [theme],
-    //   langs: [],
-    // })
-    const html = codeToHtml(fields.codeContent, {
+    const theme = JSON.parse(
+      fs.readFileSync(path.resolve(process.cwd(), './src/styles/themes/shiki/halcyon.json')),
+      'utf8',
+    )
+    const highlighter = await getHighlighter({
+      themes: [theme],
+      langs: [fields.codeLanguage],
+    })
+    const html = highlighter.codeToHtml(fields.codeContent, {
       lang: fields.codeLanguage,
-      theme: 'solarized-dark',
+      theme: 'Halcyon',
     })
     return html
   },

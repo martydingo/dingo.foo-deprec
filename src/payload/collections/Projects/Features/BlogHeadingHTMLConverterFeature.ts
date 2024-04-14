@@ -1,8 +1,8 @@
 import { HTMLConverterFeatureProps } from '@payloadcms/richtext-lexical'
 import { TextNode } from 'lexical'
-import { HeadingHTMLConverter } from '../Converters/HeadingHTMLConverter'
+import { BlogHeadingHTMLConverter } from '../Converters/BlogHeadingHTMLConverter'
 
-export const HeadingHTMLConverterFeature = (props?: HTMLConverterFeatureProps | undefined) => {
+export const BlogHeadingHTMLConverterFeature = (props?: HTMLConverterFeatureProps | undefined) => {
   // console.log(`headingHTMLFeature - props: ${JSON.stringify(props)}`)
   return {
     feature: () => {
@@ -10,7 +10,7 @@ export const HeadingHTMLConverterFeature = (props?: HTMLConverterFeatureProps | 
         nodes: [
           {
             converters: {
-              html: HeadingHTMLConverter, // <= This is where you define your HTML Converter
+              html: BlogHeadingHTMLConverter, // <= This is where you define your HTML Converter
             },
             node: TextNode,
             type: TextNode.getType(),
@@ -19,6 +19,6 @@ export const HeadingHTMLConverterFeature = (props?: HTMLConverterFeatureProps | 
         props: props,
       }
     },
-    key: 'Heading',
+    key: 'heading',
   }
 }

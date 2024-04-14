@@ -50,7 +50,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
                     curPage={{ "title": `${BlogPost.title as string}`, "href": `/blog/${BlogPost.slug as string}` }}
                     allPosts={allBlogPosts.docs}
                 />
-                <HeadingSelect headings={headings} />
+                { /* <HeadingSelect headings={headings} /> */}
             </div>
             <div className="basis-1/3 prose dark:prose-invert container xl:container xl:max-w-5xl mt-6">
                 <BlogPostHeader page={BlogPost} />
