@@ -28,7 +28,6 @@ import Projects from './collections/Projects/Projects'
 import projectImage from './collections/Media/ProjectImage/ProjectImage'
 
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { postgresAdapter } from '@payloadcms/db-postgres'
 import { buildConfig } from 'payload/config'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
@@ -43,11 +42,14 @@ function discernDb() {
     })
   }
   else {
-    return postgresAdapter({
-      pool: {
-        connectionString: process.env.POSTGRES_URI || '',
-      },
+    return mongooseAdapter({
+      url: process.env.MONGODB_URI || '',
     })
+    // return postgresAdapter({
+    //   pool: {
+    //     connectionString: process.env.POSTGRES_URI || '',
+    //   },
+    // })
   }
 }
 
