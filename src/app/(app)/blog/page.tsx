@@ -16,11 +16,21 @@ export default async function Blog({ searchParams }: { searchParams: { [key: str
     });
     const featuredBlogPosts = await payload.find({
         collection: "blog",
+        where: {
+            draft: {
+                equals: false
+            }
+        },
         page: 1,
         limit: 3
     })
     const blogPosts = await payload.find({
         collection: "blog",
+        where: {
+            draft: {
+                equals: false
+            }
+        },
         page: page,
         limit: 5
     })

@@ -3,6 +3,7 @@ import './globals.scss'
 import { ThemeProvider } from 'next-themes'
 import NavigationBar from '@/components/ui/navigation/NavigationBar/NavigationBar'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 /* Our app sits here to not cause any conflicts with payload's root layout  */
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -13,6 +14,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <NavigationBar />
           {children}
           <SpeedInsights />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

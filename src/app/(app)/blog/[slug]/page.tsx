@@ -28,14 +28,10 @@ export default async function BlogPost({ params }: { params: { slug: string } })
     const BlogPostSearch = await payload.find({
         collection: "blog",
         where: {
-            and: [
-                {
-                    slug: {
-                        equals: params.slug
-                    }
-                }
-            ],
-        }
+            slug: {
+                equals: params.slug
+            },
+        },
     })
 
     const BlogPost = BlogPostSearch.docs[0]
