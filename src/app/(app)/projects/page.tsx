@@ -18,7 +18,13 @@ export default async function Project({ searchParams }: { searchParams: { [key: 
     collection: 'projects',
     page: page,
     limit: 9,
-    depth: 2
+    depth: 2,
+    where: {
+      draft: {
+        equals: false
+      }
+    },
+
   })
 
   return (

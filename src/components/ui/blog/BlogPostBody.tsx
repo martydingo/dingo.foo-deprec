@@ -1,25 +1,16 @@
 'use client'
 import { useLivePreview } from '@payloadcms/live-preview-react';
-import { Blog as PageType, User } from '@payload-types'
+import { type Blog } from '@payload-types'
 import React from 'react';
 import { loadSVG } from '@/components/lib/svgUtils';
 import Mermaid from '../mermaid/Mermaid/Mermaid';
 import TableWrapper from '../TableWrapper';
 
 
-export const BlogPostBody: React.FC<{
-    page: {
-        title: string
-        id: string
-        date: string
-        author: string | User
-        updatedAt: string
-        createdAt: string
-    }
-}> = ({ page: initialPage }) => {
-    const { data } = useLivePreview<PageType>({
-        initialData: initialPage,
-        serverURL: "http://172.28.4.29:3000/",
+export function BlogPostBody({ page }: { page: Blog }) {
+    const { data } = useLivePreview<Blog>({
+        initialData: page,
+        serverURL: process.env.SERVER_URI as string | "",
         depth: 2,
     })
 
@@ -30,6 +21,5 @@ export const BlogPostBody: React.FC<{
             <Mermaid />
             <TableWrapper />
         </div>
-
     )
 }

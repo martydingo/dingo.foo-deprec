@@ -7,7 +7,7 @@ import React from "react"
 export function AboutClient({ page }: { page: User }) {
     const { data, isLoading } = useLivePreview<PageType>({
         initialData: page,
-        serverURL: "http://172.28.4.29:3000/",
+        serverURL: process.env.SERVER_URI as string | "",
         depth: 2,
     })
 

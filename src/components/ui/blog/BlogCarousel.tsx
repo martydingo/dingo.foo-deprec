@@ -38,7 +38,7 @@ export default function BlogCarousel({ blogPosts }: { blogPosts: { docs: Blog[] 
                                         <div className="basis-1/2">
                                             <AspectRatio ratio={4 / 3}>
                                                 <Link href={`/blog/${blogPost.slug}`}>
-                                                    <Image fill className="object-cover rounded-xl shadow-xl" alt={previewImage.alt as string} src={previewImage.sizes?.square_small?.url as string} />
+                                                    {previewImage && <Image fill className="object-cover rounded-xl shadow-xl" alt={previewImage.alt as string} src={previewImage.sizes?.square_small?.url as string} />}
                                                 </Link>
                                             </AspectRatio>
                                         </div>

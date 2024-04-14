@@ -10,6 +10,7 @@ import { Date } from './Fields/Date'
 import exp from 'constants'
 import { Tags } from './Fields/Tags'
 import { Repository } from './Fields/Repository'
+import { Draft } from './Fields/Draft'
 
 const Projects: CollectionConfig = {
   slug: 'projects',
@@ -32,6 +33,7 @@ const Projects: CollectionConfig = {
     Title,
     Date,
     Author,
+    Draft,
     PreviewImage,
     Tags,
     Repository,

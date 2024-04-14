@@ -27,13 +27,31 @@ import blogImage from './collections/Media/BlogImage/BlogImage'
 import Projects from './collections/Projects/Projects'
 import projectImage from './collections/Media/ProjectImage/ProjectImage'
 
-import { postgresAdapter } from '@payloadcms/db-postgres'
+import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { buildConfig } from 'payload/config'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
+function discernDb() {
+  if (process.env.ENV === 'production') {
+    return mongooseAdapter({
+      url: process.env.MONGODB_URI || '',
+    })
+  }
+  else {
+    return mongooseAdapter({
+      url: process.env.DEVEL_MONGODB_URI || '',
+    })
+    // return postgresAdapter({
+    //   pool: {
+    //     connectionString: process.env.POSTGRES_URI || '',
+    //   },
+    // })
+  }
+}
 
 export default buildConfig({
   //editor: slateEditor({}),
@@ -48,11 +66,7 @@ export default buildConfig({
   //     connectionString: process.env.POSTGRES_URI || ''
   //   }
   // }),
-  db: postgresAdapter({
-    pool: {
-      connectionString: process.env.POSTGRES_URI || '',
-    }
-  }),
+  db: discernDb(),
   admin: {
     //
   },

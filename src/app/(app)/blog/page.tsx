@@ -17,16 +17,26 @@ export default async function Blog({ searchParams }: { searchParams: { [key: str
     const featuredBlogPosts = await payload.find({
         collection: "blog",
         page: 1,
-        limit: 3
+        limit: 3,
+        where: {
+            draft: {
+                equals: false
+            }
+        }
     })
     const blogPosts = await payload.find({
         collection: "blog",
         page: page,
-        limit: 5
+        limit: 5,
+        where: {
+            draft: {
+                equals: false
+            }
+        }
     })
 
     return (
-        <div className="container xl:container xl:max-w-5xl max-w-2xl">
+        <div className="container xl:container xl:max-w-5xl">
 
             {/* <p className="text-sm text-muted-foreground text-center">
                 My featured blog posts

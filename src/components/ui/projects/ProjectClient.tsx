@@ -1,25 +1,15 @@
 'use client'
 import { useLivePreview } from '@payloadcms/live-preview-react';
-import { Project as PageType, User } from '@payload-types'
+import { Project } from '@payload-types'
 import React from 'react';
 
 
-export const ProjectClient: React.FC<{
-    page: {
-        title: string
-        id: string
-        date: string
-        author: string | User
-        updatedAt: string
-        createdAt: string
-    }
-}> = ({ page: initialPage }) => {
-    const { data, isLoading } = useLivePreview<PageType>({
-        initialData: initialPage,
-        serverURL: "http://172.28.4.29:3000/",
+export function ProjectClient({ page }: { page: Project }) {
+    const { data } = useLivePreview<Project>({
+        initialData: page,
+        serverURL: process.env.SERVER_URI as string | "",
         depth: 2,
     })
-
 
     return (
         <div>
