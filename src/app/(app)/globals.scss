@@ -18,11 +18,11 @@ ol > li > ol > li {
 
 @layer base {
   :root {
-    --background: var(--nord-snow-storm-2);
+    --background: var(--nord-snow-storm-1);
     --foreground: var(--nord-polar-night-4);
     --card: var(--nord-snow-storm-1);
     --card-foreground: var(--nord-polar-night-1);
-    --popover: var(--nord-snow-storm-1);
+    --popover: var(--nord-snow-storm-2);
     --popover-foreground: var(--nord-polar-night-1);
     --primary: var(--nord-aurora-orange);
     --primary-foreground: var(--nord-polar-night-1);
@@ -30,7 +30,7 @@ ol > li > ol > li {
     --secondary-foreground: var(--nord-polar-night-1);
     --muted: var(--nord-snow-storm-3);
     --muted-foreground: var(--nord-polar-night-4);
-    --accent: var(--nord-snow-storm-1);
+    --accent: var(--nord-snow-storm-3);
     --accent-foreground: var(--nord-polar-night-1);
     --destructive: var(--nord-aurora-red);
     --destructive-foreground: var(--nord-polar-night-1);

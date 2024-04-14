@@ -10,39 +10,39 @@
         max-height: max-content;
     }
     .marker {
-        fill: #5E81ACcc !important;
-        stroke: #5E81AC !important;
+        fill: #4C566Acc !important;
+        stroke: #4C566A !important;
         stroke-width: 0.3px !important;
     }
 
     .edgePath, .flowchart-link {
-        stroke: #5E81ACcc !important;
+        stroke: #4C566Acc !important;
         stroke-width: 1px !important;
     }
 
     .subgraph-lvl-0 {
-        fill: #D8DEE9  !important;
-        stroke: #D8DEE9 !important;
+        fill: #ECEFF4  !important;
+        stroke: #ECEFF4 !important;
         stroke-width: 1px !important;
     }
     
     .subgraph-lvl-1 {
-        fill: #E5E9F0 !important;
-        stroke: #E5E9F0 !important;
+        fill: #D8DEE9 !important;
+        stroke: #D8DEE9 !important;
         stroke-width: 1px !important;
         
     }
     
     .subgraph-lvl-2 {
-        fill: #D8DEE9 !important;
-        stroke: #D8DEE9 !important;
+        fill: #E5E9F0 !important;
+        stroke: #E5E9F0 !important;
         stroke-width: 1px !important;
     }
     
     
     .label-container {
-        fill: #ECEFF4 !important;
-        stroke: #ECEFF4 !important;
+        fill: #D8DEE9 !important;
+        stroke: #D8DEE9 !important;
         stroke-width: 1px !important;
     }
 
