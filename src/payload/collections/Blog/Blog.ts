@@ -15,6 +15,7 @@ import { Content } from './Fields/Content'
 import { Summary } from './Fields/Summary'
 import { Series } from './Fields/Series'
 import { Tags } from './Fields/Tags'
+import { Draft } from './Fields/Draft'
 
 const Blog: CollectionConfig = {
   slug: 'blog',
@@ -38,6 +39,7 @@ const Blog: CollectionConfig = {
     Title,
     Date,
     Author,
+    Draft,
     Series,
     PreviewImage,
     Tags,
