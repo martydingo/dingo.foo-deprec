@@ -37,7 +37,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 function discernDb() {
-  if (process.env.ENV === 'development') {
+  if (process.env.ENV !== 'development') {
     return mongooseAdapter({
       url: process.env.MONGODB_URI || '',
     })
