@@ -20,7 +20,7 @@ export function AboutClient({ page }: { page: User }) {
             <h1>
                 About
             </h1>
-            <div dangerouslySetInnerHTML={{ '__html': data.about_html as string }} />
+            {data.about_html && <div dangerouslySetInnerHTML={{ '__html': data.about_html as string }} />}
         </div>
 
     )
