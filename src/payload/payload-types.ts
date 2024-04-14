@@ -25,7 +25,7 @@ export interface Config {
  * via the `definition` "blogImage".
  */
 export interface BlogImage {
-  id: string;
+  id: number;
   alt?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -92,7 +92,7 @@ export interface BlogImage {
  * via the `definition` "projectImage".
  */
 export interface ProjectImage {
-  id: string;
+  id: number;
   alt?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -159,7 +159,7 @@ export interface ProjectImage {
  * via the `definition` "profileImage".
  */
 export interface ProfileImage {
-  id: string;
+  id: number;
   alt?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -194,7 +194,7 @@ export interface ProfileImage {
  * via the `definition` "siteImage".
  */
 export interface SiteImage {
-  id: string;
+  id: number;
   alt?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -261,9 +261,9 @@ export interface SiteImage {
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: number;
   name: string;
-  profileImage?: string | ProfileImage | null;
+  profileImage?: number | ProfileImage | null;
   about?: {
     root: {
       type: string;
@@ -296,10 +296,11 @@ export interface User {
  * via the `definition` "blog".
  */
 export interface Blog {
-  id: string;
+  id: number;
   title: string;
   date: string;
-  author: string | User;
+  author: number | User;
+  draft?: boolean | null;
   series?:
     | {
         seriesPart?: number | null;
@@ -307,7 +308,7 @@ export interface Blog {
         id?: string | null;
       }[]
     | null;
-  previewImage?: string | BlogImage | null;
+  previewImage?: number | BlogImage | null;
   tags?:
     | {
         tag?: string | null;
@@ -355,11 +356,12 @@ export interface Blog {
  * via the `definition` "projects".
  */
 export interface Project {
-  id: string;
+  id: number;
   title: string;
   date: string;
-  author: string | User;
-  previewImage?: string | ProjectImage | null;
+  author: number | User;
+  draft?: boolean | null;
+  previewImage?: number | ProjectImage | null;
   tags?:
     | {
         tag?: string | null;
@@ -408,10 +410,10 @@ export interface Project {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
+  id: number;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   key?: string | null;
   value?:
@@ -431,7 +433,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
+  id: number;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
